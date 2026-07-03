@@ -81,12 +81,62 @@
         </button>
         <span class="topbar-page-title">Biodata & Data Akademik</span>
       </div>
-      <div class="topbar-right">
-        <button class="topbar-icon-btn" title="Notifikasi">
-          <span class="material-symbols-outlined">notifications</span>
-          <span class="topbar-notif-dot"></span>
-        </button>
-        <img class="topbar-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU" alt="Avatar">
+            <div class="topbar-right">
+        <div class="topbar-right-actions">
+          
+          <div class="dropdown-wrapper">
+            <button class="topbar-icon-btn" id="notifToggle" title="Notifikasi">
+              <span class="material-symbols-outlined">notifications</span>
+              <span class="topbar-notif-dot"></span>
+            </button>
+            <div class="dropdown-menu" id="notifMenu">
+              <div class="dropdown-header">
+                <div class="dropdown-header-title">Notifikasi Terbaru</div>
+              </div>
+              <a href="#" class="dropdown-item">
+                <div style="background:#e8f4fd; color:#1a6fa8; padding:8px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><span class="material-symbols-outlined" style="font-size:18px;">check_circle</span></div>
+                <div class="dropdown-item-content">
+                  <span class="dropdown-item-title">Pendaftaran Disimpan</span>
+                  <span class="dropdown-item-desc">Data biodata Anda berhasil disimpan.</span>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div style="background:#fff1f0; color:#ba1a1a; padding:8px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><span class="material-symbols-outlined" style="font-size:18px;">error</span></div>
+                <div class="dropdown-item-content">
+                  <span class="dropdown-item-title">Upload Dokumen</span>
+                  <span class="dropdown-item-desc">Anda belum mengunggah Ijazah.</span>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item" style="justify-content:center; color:#1a6fa8; font-weight:600; font-size:13px;">
+                Lihat Semua Notifikasi
+              </a>
+            </div>
+          </div>
+
+          <div class="dropdown-wrapper">
+            <img class="topbar-avatar" id="profileToggle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU" alt="Avatar">
+            <div class="dropdown-menu" id="profileMenu" style="width: 240px;">
+              <div class="dropdown-header">
+                <div class="dropdown-header-title">Budi Santoso</div>
+                <div style="font-size:12px; color:#74777f;">PMB-2024-0815</div>
+              </div>
+              <a href="dashboard-biodata.html" class="dropdown-item">
+                <span class="material-symbols-outlined">person</span>
+                <span class="dropdown-item-title">Pengaturan Akun</span>
+              </a>
+              <a href="#" class="dropdown-item">
+                <span class="material-symbols-outlined">help</span>
+                <span class="dropdown-item-title">Bantuan & FAQ</span>
+              </a>
+              <div style="height:1px; background:#e8eaf0; margin:4px 0;"></div>
+              <a href="login.html" class="dropdown-item" style="color:#ba1a1a;">
+                <span class="material-symbols-outlined" style="color:#ba1a1a;">logout</span>
+                <span class="dropdown-item-title" style="color:#ba1a1a;">Keluar</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </header>
 
@@ -245,6 +295,7 @@
   
 </body>
 </html>
+
 
 
 
