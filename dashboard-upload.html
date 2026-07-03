@@ -12,27 +12,27 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     *,:before,:after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Work Sans','Helvetica Neue',sans-serif;background:#f8f9ff;color:#121c2a;}
+    body{font-family:'Work Sans','Helvetica Neue',sans-serif;}
     ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#c4c6cf;border-radius:3px}
     
-    .upload-card{display:flex;flex-direction:column;gap:12px;padding:24px;border:2px dashed #c4c6cf;border-radius:16px;background:#fafbff;text-align:center;transition:all .2s;cursor:pointer;position:relative;overflow:hidden}
+    .upload-card{display:flex;flex-direction:column;gap:12px;padding:24px;border:2px dashed #c4c6cf;border-radius:16px;text-align:center;transition:all .2s;cursor:pointer;position:relative;overflow:hidden}
     .upload-card:hover,.upload-card.dragover{border-color:#1a6fa8;background:#f0f7fd}
-    .upload-card-icon{width:56px;height:56px;border-radius:14px;background:#fff;border:1px solid #e8eaf0;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .upload-card-icon{width:56px;height:56px;border-radius:14px;border:1px solid #e8eaf0;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 2px 8px rgba(0,0,0,.04)}
     .upload-card-icon .material-symbols-outlined{font-size:28px;color:#74777f}
     .upload-card:hover .upload-card-icon .material-symbols-outlined{color:#1a6fa8}
-    .upload-card-title{font-weight:600;font-size:15px;color:#121c2a;margin-bottom:4px}
+    .upload-card-title{font-weight:600;font-size:15px;margin-bottom:4px}
     .upload-card-desc{font-size:12px;color:#74777f;line-height:1.4}
     
-    .upload-list-item{display:flex;align-items:center;gap:16px;padding:16px 20px;border:1px solid #e8eaf0;border-radius:12px;background:#fff;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.02)}
+    .upload-list-item{display:flex;align-items:center;gap:16px;padding:16px 20px;border:1px solid #e8eaf0;border-radius:12px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.02)}
     .upload-item-icon{width:42px;height:42px;border-radius:10px;background:#e8f4fd;display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .upload-item-icon .material-symbols-outlined{color:#1a6fa8;font-size:22px}
     .upload-item-info{flex-grow:1;min-width:0}
-    .upload-item-name{font-weight:600;font-size:14px;color:#121c2a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .upload-item-name{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .upload-item-meta{font-size:12px;color:#74777f;margin-top:2px}
     .upload-item-actions{display:flex;gap:8px}
-    .btn-icon{width:32px;height:32px;border-radius:8px;border:none;background:#f4f5f9;color:#44474f;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s}
-    .btn-icon:hover{background:#e8eaf0;color:#121c2a}
-    .btn-icon.danger:hover{background:#fff1f0;color:#ba1a1a}
+    .btn-icon{width:32px;height:32px;border-radius:8px;border:none;background:#f4f5f9;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s}
+    .btn-icon:hover{background:#e8eaf0;}
+    .btn-icon.danger:hover{1f0;color:#ba1a1a}
   </style>
 </head>
 <body>
@@ -120,7 +120,7 @@
                 </div>
               </a>
               <a href="#" class="dropdown-item">
-                <div style="background:#fff1f0; color:#ba1a1a; padding:8px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><span class="material-symbols-outlined" style="font-size:18px;">error</span></div>
+                <div style="1f0; color:#ba1a1a; padding:8px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><span class="material-symbols-outlined" style="font-size:18px;">error</span></div>
                 <div class="dropdown-item-content">
                   <span class="dropdown-item-title">Upload Dokumen</span>
                   <span class="dropdown-item-desc">Anda belum mengunggah Ijazah.</span>
@@ -173,8 +173,8 @@
           <div class="db-section">
             <div class="db-section-body" style="padding:24px;">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-                <h3 style="font-size:14px;font-weight:600;color:#121c2a;">Progres Upload Dokumen</h3>
-                <span style="font-size:13px;font-weight:700;color:#000a1e;">1 / 5 Dokumen</span>
+                <h3 style="font-size:14px;font-weight:600;">Progres Upload Dokumen</h3>
+                <span style="font-size:13px;font-weight:700;">1 / 5 Dokumen</span>
               </div>
               <div class="progress-bar">
                 <div class="progress-fill" style="width:20%;background:linear-gradient(90deg,#002147,#005b9f);"></div>
@@ -195,7 +195,7 @@
               
               <!-- KTP -->
               <div style="margin-bottom:24px;">
-                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+                <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
                   1. Scan KTP Asli <span style="color:#ba1a1a;">*</span>
                 </h4>
                 
@@ -217,7 +217,7 @@
 
               <!-- KK -->
               <div style="margin-bottom:24px;">
-                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+                <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
                   2. Scan Kartu Keluarga (KK) <span style="color:#ba1a1a;">*</span>
                 </h4>
                 <div class="upload-card">
@@ -232,7 +232,7 @@
 
               <!-- Ijazah / SKL -->
               <div style="margin-bottom:24px;">
-                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+                <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
                   3. Scan Ijazah / Surat Keterangan Lulus <span style="color:#ba1a1a;">*</span>
                 </h4>
                 <div class="upload-card">
@@ -247,7 +247,7 @@
 
               <!-- Rapor -->
               <div style="margin-bottom:24px;">
-                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+                <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
                   4. Rapor Semester 1 - 5 <span style="color:#ba1a1a;">*</span>
                 </h4>
                 <div class="upload-card">
@@ -274,7 +274,7 @@
             <div class="db-section-body">
               <!-- Sertifikat Prestasi -->
               <div>
-                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;">
+                <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;">
                   Sertifikat Prestasi (Tingkat Nasional/Internasional)
                 </h4>
                 <div class="upload-card">
@@ -309,6 +309,7 @@
   
 </body>
 </html>
+
 
 
 
