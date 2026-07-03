@@ -970,7 +970,7 @@ ul, ol {
   position: relative;
 }
 
-.form-input-icon .material-symbols-outlined {
+.form-input-icon > .material-symbols-outlined {
   position: absolute;
   left: 12px;
   top: 50%;
@@ -2432,4 +2432,19 @@ ul, ol {
   color: var(--on-primary);
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* ===================================================================
+   29. BUG FIXES (Password & Dark Mode)
+   =================================================================== */
+.password-toggle-btn .material-symbols-outlined {
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  pointer-events: auto !important;
+}
+
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .theme-toggle .material-symbols-outlined {
+  color: var(--on-surface) !important;
 }
