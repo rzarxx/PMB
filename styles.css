@@ -2448,3 +2448,71 @@ ul, ol {
 [data-theme="dark"] .theme-toggle .material-symbols-outlined {
   color: var(--on-surface) !important;
 }
+
+/* ===================================================================
+   30. DARK MODE REFINEMENTS & INLINE STYLE OVERRIDES
+   =================================================================== */
+[data-theme="dark"] {
+  --primary: #aec7f6;
+  --on-primary: #001b3d;
+  --primary-container: #002147;
+  --on-primary-container: #d6e3ff;
+  
+  --secondary: #ffba3b;
+  --on-secondary: #281900;
+  --secondary-container: #6a4800;
+  --on-secondary-container: #ffdead;
+  
+  --tertiary: #c4c7ca;
+  --on-tertiary: #191c1f;
+  --tertiary-container: #44474a;
+  --on-tertiary-container: #e0e2e6;
+}
+
+[data-theme="dark"] .dash-page-title,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .db-section-title,
+[data-theme="dark"] .auth-title,
+[data-theme="dark"] .stat-value,
+[data-theme="dark"] .dropdown-header-title {
+  color: var(--on-surface) !important;
+}
+
+/* Force dark background for specific elements missing CSS classes */
+[data-theme="dark"] .content-section,
+[data-theme="dark"] .db-section,
+[data-theme="dark"] .dash-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .auth-card {
+  background: var(--surface-container) !important;
+  border-color: var(--outline-variant) !important;
+}
+
+/* Catch all inline white backgrounds */
+[data-theme="dark"] [style*="background:#ffffff"],
+[data-theme="dark"] [style*="background: #ffffff"],
+[data-theme="dark"] [style*="background-color:#ffffff"],
+[data-theme="dark"] [style*="background-color: #ffffff"],
+[data-theme="dark"] [style*="background:white"],
+[data-theme="dark"] [style*="background: white"] {
+  background: var(--surface-container) !important;
+  border-color: var(--outline-variant) !important;
+}
+
+/* Catch all inline dark text colors */
+[data-theme="dark"] [style*="color:#000a1e"],
+[data-theme="dark"] [style*="color: #000a1e"],
+[data-theme="dark"] [style*="color:#121c2a"],
+[data-theme="dark"] [style*="color: #121c2a"],
+[data-theme="dark"] [style*="color:#44474f"],
+[data-theme="dark"] [style*="color: #44474f"] {
+  color: var(--on-surface) !important;
+}
+
+/* Specific fix for "Alur Pendaftaran" */
+[data-theme="dark"] .step-label {
+  color: var(--on-surface) !important;
+}
+[data-theme="dark"] .step-item-new:not(.active):not(.done) .step-dot {
+  background: var(--surface-variant) !important;
+}
