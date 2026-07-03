@@ -2516,3 +2516,9 @@ ul, ol {
 [data-theme="dark"] .step-item-new:not(.active):not(.done) .step-dot {
   background: var(--surface-variant) !important;
 }
+
+/* Sidebar Dark Mode Adjustment */
+[data-theme="dark"] .sidebar {
+  background: var(--surface-container) !important;
+  border-right: 1px solid var(--outline-variant);
+}
