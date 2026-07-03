@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Akun Baru - IPB Cirebon</title>
+  <meta name="description" content="Buat akun baru di portal IPB Cirebon untuk memulai proses pendaftaran mahasiswa baru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .register-page { background:var(--surface);min-height:100vh;display:flex;flex-direction:column; }
+    .register-main { flex-grow:1;display:flex;align-items:center;justify-content:center;padding:32px 20px; }
+    @media(min-width:768px){ .register-main { padding:48px 64px; } }
+    .register-box { width:100%;max-width:672px;background:var(--surface-container-lowest);border:1px solid var(--outline-variant);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-sm); }
+  </style>
+</head>
+<body class="register-page">
+
+  <main class="register-main">
+    <div class="register-box">
+      <!-- Header -->
+      <div style="text-align:center;margin-bottom:var(--space-stack-lg);">
+        <h1 class="headline-lg" style="color:var(--primary);margin-bottom:var(--space-stack-sm);">IPB Cirebon</h1>
+        <p class="body-md" style="color:var(--on-surface-variant);">Bergabunglah bersama kami. Lengkapi formulir pendaftaran di bawah ini.</p>
+      </div>
+
+      <form id="registerForm" class="register-form">
+
+        <!-- Section 1: Informasi Akun -->
+        <div class="form-section">
+          <h2 class="form-section-title">Informasi Akun</h2>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="fullName">Nama Lengkap</label>
+              <input class="form-input" id="fullName" placeholder="Sesuai ijazah" type="text" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="whatsapp">Nomor WhatsApp</label>
+              <input class="form-input" id="whatsapp" placeholder="08xxxxxxxxxx" type="tel" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" id="email" placeholder="email@contoh.com" type="email" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="password">Password</label>
+              <input class="form-input" id="password" placeholder="Minimal 8 karakter" type="password" autocomplete="new-password">
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Minat Akademik -->
+        <div class="form-section">
+          <h2 class="form-section-title">Minat Akademik</h2>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="gradYear">Tahun Lulus</label>
+              <select class="form-select" id="gradYear">
+                <option value="">Pilih Tahun Lulus</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="admissionPath">Jalur Pendaftaran</label>
+              <select class="form-select" id="admissionPath">
+                <option value="">Pilih Jalur</option>
+                <option value="mandiri">Mandiri</option>
+                <option value="prestasi">Prestasi</option>
+                <option value="kip">KIP-Kuliah</option>
+              </select>
+            </div>
+            <div class="form-group col-span-2">
+              <label class="form-label" for="program1">Pilihan Program Studi 1 <span style="color:var(--error);">*</span></label>
+              <select class="form-select" id="program1" required>
+                <option value="">Pilih Program Studi Utama</option>
+                <option value="cs">Teknik Informatika</option>
+                <option value="ba">Administrasi Bisnis</option>
+                <option value="ds">Desain Komunikasi Visual</option>
+                <option value="fe">Teknik Elektro</option>
+                <option value="mi">Manajemen Informatika</option>
+              </select>
+            </div>
+            <div class="form-group col-span-2">
+              <label class="form-label" for="program2">
+                Pilihan Program Studi 2
+                <span class="optional-badge">Opsional</span>
+              </label>
+              <select class="form-select" id="program2">
+                <option value="">Pilih Program Studi Alternatif (Opsional)</option>
+                <option value="cs">Teknik Informatika</option>
+                <option value="ba">Administrasi Bisnis</option>
+                <option value="ds">Desain Komunikasi Visual</option>
+                <option value="fe">Teknik Elektro</option>
+                <option value="mi">Manajemen Informatika</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div>
+          <button class="btn btn-block" type="submit" id="registerBtn" style="background:var(--secondary-container);color:var(--on-secondary-container);padding:14px;font-size:16px;font-weight:600;box-shadow:var(--shadow-sm);">
+            Daftar Sekarang
+          </button>
+        </div>
+
+        <p class="auth-footer-text">
+          Sudah punya akun? <a href="login.html">Login di sini</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

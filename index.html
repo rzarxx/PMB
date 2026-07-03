@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPB Cirebon - Wujudkan Masa Depanmu</title>
+  <meta name="description" content="Portal Pendaftaran Mahasiswa Baru IPB Cirebon. Daftar sekarang untuk Tahun Akademik 2024/2025.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand" style="display:flex;align-items:center;gap:8px;"><img src="https://ipbcirebon.ac.id/assets/img/logo.png" alt="Logo" style="height:36px;width:auto;">IPB Cirebon</a>
+      <nav class="navbar-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="#paths">Admission Paths</a>
+        <a href="#timeline">Timeline</a>
+      </nav>
+      <a href="login.html" class="navbar-cta">Login</a>
+      <!-- Mobile Menu Button -->
+      <button class="navbar-mobile-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span class="material-symbols-outlined filled">menu</span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="#paths">Admission Paths</a>
+      <a href="#timeline">Timeline</a>
+      <a href="login.html" class="mobile-cta">Login</a>
+    </div>
+  </header>
+
+  <main style="flex-grow: 1;">
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-bg-img" style="background-image: url('https://ipbcirebon.ac.id/assets/img/hero.webp');"></div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Wujudkan Masa Depanmu Bersama IPB Cirebon</h1>
+          <p class="hero-subtitle">Pendaftaran Mahasiswa Baru Tahun Akademik 2024/2025 telah dibuka. Bergabunglah dengan komunitas akademik terbaik.</p>
+          <div class="hero-actions">
+            <a href="register.html" class="btn btn-primary btn-lg">Daftar Sekarang</a>
+            <a href="#paths" class="btn btn-outline btn-lg">Pelajari Program</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12" style="align-items: center;">
+          <div>
+            <h2 class="section-title" style="margin-bottom: 24px;">Membentuk Pemimpin Masa Depan</h2>
+            <p class="body-md" style="color: var(--on-surface-variant); margin-bottom: 16px;">
+              IPB Cirebon berdedikasi untuk memberikan pendidikan berkualitas tinggi yang menggabungkan keunggulan akademik dengan pengalaman praktis. Misi kami adalah memberdayakan mahasiswa untuk menjadi inovator dan pemimpin yang bertanggung jawab dalam masyarakat global.
+            </p>
+            <p class="body-md" style="color: var(--on-surface-variant); margin-bottom: 32px;">
+              Dengan fasilitas modern, fakultas berdedikasi, dan lingkungan belajar yang inklusif, kami mempersiapkan Anda tidak hanya untuk karir yang sukses, tetapi untuk kehidupan yang berdampak.
+            </p>
+            <a href="#" class="link-arrow">
+              Jelajahi Fasilitas Kami
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+          <div class="about-image-wrapper">
+            <div class="about-image">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAPq0DCUXrXWHf6p0zHY2KeBpfYGV4BEJXIAuBGpJHJfTkK046g9gMtn9Stm7scMrml_XvihzrVytqgIJ0ORz0H0fOouQU2Sa84qH3X3sks8bE0O1vp0Hy-X0l8J60cEtlFe5d-HX-k8sguubHYAZSDGpA-o1eD2rCHk111Q830tZA9926dSG3OKb7Ne55mNN1XdV_PyygB0D-SQIuqW2xIAGogND0FeyNavCTW0Exmt9oxS9PH3B5lFJVz7yg7OsocatUUVRu75M" alt="Perpustakaan modern universitas dengan mahasiswa sedang belajar">
+            </div>
+            <div class="decorative-block"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ADMISSION PATHS SECTION ============ -->
+    <section class="section section-alt" id="paths">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 64px;">
+          <h2 class="section-title" style="margin-bottom: 16px;">Jalur Pendaftaran</h2>
+          <p class="section-subtitle centered">
+            Pilih jalur masuk yang sesuai dengan potensi dan latar belakang Anda. Kami menyediakan berbagai opsi untuk memastikan akses pendidikan yang inklusif.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger">
+          <!-- Path 1: Jalur Mandiri -->
+          <a href="jalur-mandiri.html" class="card" style="text-decoration: none;">
+            <div class="card-icon card-icon-primary">
+              <span class="material-symbols-outlined filled">edit_document</span>
+            </div>
+            <h3 class="card-title">Jalur Mandiri</h3>
+            <p class="card-text">
+              Seleksi penerimaan berdasarkan hasil ujian tulis mandiri yang diselenggarakan oleh universitas untuk mengukur kemampuan akademik dasar.
+            </p>
+            <span class="card-link">
+              Detail Jalur
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </span>
+          </a>
+          <!-- Path 2: Jalur Prestasi -->
+          <a href="jalur-prestasi.html" class="card card-highlight" style="text-decoration: none;">
+            <div class="card-icon card-icon-secondary">
+              <span class="material-symbols-outlined filled">military_tech</span>
+            </div>
+            <h3 class="card-title">Jalur Prestasi</h3>
+            <p class="card-text">
+              Kesempatan masuk tanpa tes tulis bagi siswa yang memiliki prestasi akademik (nilai rapor) atau non-akademik (olahraga/seni) tingkat nasional/internasional.
+            </p>
+            <span class="card-link">
+              Detail Jalur
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </span>
+          </a>
+          <!-- Path 3: Jalur KIP-Kuliah -->
+          <a href="jalur-kip.html" class="card" style="text-decoration: none;">
+            <div class="card-icon card-icon-primary">
+              <span class="material-symbols-outlined filled">school</span>
+            </div>
+            <h3 class="card-title">Jalur KIP-Kuliah</h3>
+            <p class="card-text">
+              Program bantuan biaya pendidikan dari pemerintah bagi lulusan SMA/sederajat yang memiliki potensi akademik baik namun memiliki keterbatasan ekonomi.
+            </p>
+            <span class="card-link">
+              Detail Jalur
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ALUR & TIMELINE SECTION ============ -->
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Alur Pendaftaran -->
+          <div class="lg:col-span-5 card" style="background-color: var(--surface);">
+            <h2 class="headline-md" style="color: var(--primary); margin-bottom: 32px;">Alur Pendaftaran</h2>
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+              <!-- Step 1 -->
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div>
+                  <h4 class="step-title">Buat Akun</h4>
+                  <p class="step-desc">Daftarkan email aktif dan buat password untuk mengakses portal.</p>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div>
+                  <h4 class="step-title">Lengkapi Data</h4>
+                  <p class="step-desc">Isi biodata, unggah dokumen persyaratan, dan pilih program studi.</p>
+                </div>
+              </div>
+              <!-- Step 3 -->
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div>
+                  <h4 class="step-title">Pembayaran</h4>
+                  <p class="step-desc">Lakukan pembayaran biaya pendaftaran melalui bank mitra.</p>
+                </div>
+              </div>
+              <!-- Step 4 -->
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div>
+                  <h4 class="step-title">Ujian/Seleksi</h4>
+                  <p class="step-desc">Ikuti tahapan seleksi sesuai jalur masuk yang dipilih.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Pendaftaran -->
+          <div class="lg:col-span-7 card" style="background-color: var(--surface-container-low);">
+            <h2 class="headline-md" style="color: var(--primary); margin-bottom: 32px;">Timeline Penting 2024</h2>
+            <div class="timeline-grid">
+              <!-- Event 1: Completed -->
+              <div class="timeline-item">
+                <div class="timeline-dot timeline-dot-completed">
+                  <span class="material-symbols-outlined filled">check</span>
+                </div>
+                <div>
+                  <div class="timeline-date timeline-date-completed">1 Feb - 30 Mar</div>
+                  <div class="timeline-label" style="color: var(--on-surface); font-weight: 500;">Pendaftaran Online</div>
+                </div>
+              </div>
+              <!-- Event 2: Current -->
+              <div class="timeline-item">
+                <div class="timeline-dot timeline-dot-current">
+                  <span class="material-symbols-outlined filled">edit_square</span>
+                </div>
+                <div>
+                  <div class="timeline-date timeline-date-current">15 April 2024</div>
+                  <div class="timeline-label" style="color: var(--on-surface); font-weight: 500;">Ujian Masuk</div>
+                </div>
+              </div>
+              <!-- Event 3: Future -->
+              <div class="timeline-item">
+                <div class="timeline-dot timeline-dot-future">
+                  <span class="material-symbols-outlined">campaign</span>
+                </div>
+                <div>
+                  <div class="timeline-date timeline-date-future">2 Mei 2024</div>
+                  <div class="timeline-label" style="color: var(--on-surface-variant);">Pengumuman</div>
+                </div>
+              </div>
+              <!-- Event 4: Future -->
+              <div class="timeline-item">
+                <div class="timeline-dot timeline-dot-future">
+                  <span class="material-symbols-outlined">how_to_reg</span>
+                </div>
+                <div>
+                  <div class="timeline-date timeline-date-future">10 - 24 Mei 2024</div>
+                  <div class="timeline-label" style="color: var(--on-surface-variant);">Daftar Ulang</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand">IPB Cirebon</div>
+        <p class="footer-desc">
+          Membentuk masa depan melalui keunggulan akademik dan inovasi berkelanjutan.
+        </p>
+      </div>
+      <!-- Links -->
+      <div class="footer-links">
+        <a href="#" class="footer-link">Campus Address</a>
+        <a href="#" class="footer-link">Academic Departments</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <!-- Bottom -->
+      <div class="footer-bottom">
+        © 2024 University Admissions Office. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

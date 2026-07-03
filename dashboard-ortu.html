@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Orang Tua - IPB Cirebon</title>
+  <meta name="description" content="Isi data orang tua atau wali untuk keperluan administrasi pendaftaran mahasiswa baru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    *,:before,:after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Work Sans','Helvetica Neue',sans-serif;background:#f8f9ff;color:#121c2a;}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#c4c6cf;border-radius:3px}
+  </style>
+</head>
+<body>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo" style="background:transparent;"><img src="https://ipbcirebon.ac.id/assets/img/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+      <div>
+        <div class="sidebar-brand">IPB Cirebon</div>
+        <div class="sidebar-tagline">Admissions Portal</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-section">Menu Utama</div>
+      <a href="dashboard.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Overview</span>
+      </a>
+      <a href="dashboard-biodata.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">person</span>
+        <span>Biodata</span>
+      </a>
+      <a href="dashboard-prodi.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">account_balance</span>
+        <span>Program Studi</span>
+      </a>
+      <a href="dashboard-ortu.html" class="sidebar-nav-item active">
+        <span class="material-symbols-outlined">family_restroom</span>
+        <span>Data Orang Tua</span>
+      </a>
+      <a href="dashboard-upload.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">upload_file</span>
+        <span>Upload Dokumen</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user-card">
+        <img class="sidebar-user-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU" alt="Avatar">
+        <div>
+          <div class="sidebar-user-name">Budi Santoso</div>
+          <div class="sidebar-user-id">PMB-2024-0815</div>
+        </div>
+      </div>
+      <a href="login.html" class="sidebar-nav-item" style="color:#f87171;">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Keluar</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="dashboard-main" id="dashMain">
+
+    <header class="dashboard-topbar">
+      <div class="topbar-left">
+        <button class="dashboard-topbar-btn" id="sidebarToggle" aria-label="Toggle sidebar">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <span class="topbar-page-title">Data Orang Tua</span>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-icon-btn" title="Notifikasi">
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="topbar-notif-dot"></span>
+        </button>
+        <img class="topbar-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU" alt="Avatar">
+      </div>
+    </header>
+
+    <main class="dashboard-content">
+      <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
+
+        <div class="dash-page-header">
+          <h2 class="dash-page-title">Data Orang Tua & Wali</h2>
+          <p class="dash-page-subtitle">Lengkapi informasi mengenai orang tua kandung atau wali Anda untuk keperluan administrasi dan darurat.</p>
+        </div>
+
+        <form id="ortuForm" class="dashboard-form">
+
+          <!-- Data Ayah -->
+          <div class="db-section">
+            <div class="db-section-header">
+              <div class="db-section-header-icon" style="background:#e8f4fd;">
+                <span class="material-symbols-outlined" style="color:#1a6fa8;">man</span>
+              </div>
+              <h3 class="db-section-title">Data Ayah Kandung</h3>
+            </div>
+            <div class="db-section-body">
+              <div class="form-grid">
+                <div class="form-group col-span-2">
+                  <label class="form-label" for="namaAyah">Nama Lengkap Ayah (beserta gelar jika ada)</label>
+                  <input class="form-input" id="namaAyah" placeholder="Nama Ayah" type="text">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="statusAyah">Status Ayah</label>
+                  <select class="form-select" id="statusAyah">
+                    <option value="hidup">Masih Hidup</option>
+                    <option value="meninggal">Sudah Meninggal</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pekerjaanAyah">Pekerjaan</label>
+                  <select class="form-select" id="pekerjaanAyah">
+                    <option value="">Pilih Pekerjaan</option>
+                    <option value="pns">PNS / TNI / Polri</option>
+                    <option value="swasta">Pegawai Swasta</option>
+                    <option value="wiraswasta">Wiraswasta / Pengusaha</option>
+                    <option value="petani">Petani / Nelayan</option>
+                    <option value="lainnya">Lainnya</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pendidikanAyah">Pendidikan Terakhir</label>
+                  <select class="form-select" id="pendidikanAyah">
+                    <option value="">Pilih Pendidikan</option>
+                    <option value="sd">SD / Sederajat</option>
+                    <option value="smp">SMP / Sederajat</option>
+                    <option value="sma">SMA / Sederajat</option>
+                    <option value="d3">D3</option>
+                    <option value="s1">S1 / D4</option>
+                    <option value="s2">S2</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="penghasilanAyah">Rata-rata Penghasilan per Bulan</label>
+                  <select class="form-select" id="penghasilanAyah">
+                    <option value="">Pilih Rentang Penghasilan</option>
+                    <option value="<1jt">< Rp 1.000.000</option>
+                    <option value="1-3jt">Rp 1.000.000 - Rp 3.000.000</option>
+                    <option value="3-5jt">Rp 3.000.000 - Rp 5.000.000</option>
+                    <option value="5-10jt">Rp 5.000.000 - Rp 10.000.000</option>
+                    <option value=">10jt">> Rp 10.000.000</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Ibu -->
+          <div class="db-section">
+            <div class="db-section-header">
+              <div class="db-section-header-icon" style="background:#fff1f0;">
+                <span class="material-symbols-outlined" style="color:#ba1a1a;">woman</span>
+              </div>
+              <h3 class="db-section-title">Data Ibu Kandung</h3>
+            </div>
+            <div class="db-section-body">
+              <div class="form-grid">
+                <div class="form-group col-span-2">
+                  <label class="form-label" for="namaIbu">Nama Lengkap Ibu (nama gadis ibu kandung)</label>
+                  <input class="form-input" id="namaIbu" placeholder="Nama Ibu" type="text">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="statusIbu">Status Ibu</label>
+                  <select class="form-select" id="statusIbu">
+                    <option value="hidup">Masih Hidup</option>
+                    <option value="meninggal">Sudah Meninggal</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pekerjaanIbu">Pekerjaan</label>
+                  <select class="form-select" id="pekerjaanIbu">
+                    <option value="">Pilih Pekerjaan</option>
+                    <option value="irt">Ibu Rumah Tangga</option>
+                    <option value="pns">PNS / TNI / Polri</option>
+                    <option value="swasta">Pegawai Swasta</option>
+                    <option value="wiraswasta">Wiraswasta / Pengusaha</option>
+                    <option value="lainnya">Lainnya</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pendidikanIbu">Pendidikan Terakhir</label>
+                  <select class="form-select" id="pendidikanIbu">
+                    <option value="">Pilih Pendidikan</option>
+                    <option value="sd">SD / Sederajat</option>
+                    <option value="smp">SMP / Sederajat</option>
+                    <option value="sma">SMA / Sederajat</option>
+                    <option value="d3">D3</option>
+                    <option value="s1">S1 / D4</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="penghasilanIbu">Rata-rata Penghasilan per Bulan</label>
+                  <select class="form-select" id="penghasilanIbu">
+                    <option value="">Pilih Rentang Penghasilan</option>
+                    <option value="0">Tidak berpenghasilan (IRT)</option>
+                    <option value="<1jt">< Rp 1.000.000</option>
+                    <option value="1-3jt">Rp 1.000.000 - Rp 3.000.000</option>
+                    <option value="3-5jt">Rp 3.000.000 - Rp 5.000.000</option>
+                    <option value=">5jt">> Rp 5.000.000</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kontak Darurat & Wali -->
+          <div class="db-section">
+            <div class="db-section-header">
+              <div class="db-section-header-icon" style="background:#f0fdf4;">
+                <span class="material-symbols-outlined" style="color:#166534;">support_agent</span>
+              </div>
+              <h3 class="db-section-title">Kontak Darurat (Wali)</h3>
+            </div>
+            <div class="db-section-body">
+              <p style="font-size:13px;color:#74777f;margin-bottom:16px;">Seseorang yang dapat kami hubungi dalam keadaan darurat (bisa Ayah/Ibu atau saudara lain).</p>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="namaWali">Nama Wali</label>
+                  <input class="form-input" id="namaWali" placeholder="Nama lengkap" type="text">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="hubunganWali">Hubungan dengan Anda</label>
+                  <select class="form-select" id="hubunganWali">
+                    <option value="">Pilih Hubungan</option>
+                    <option value="ayah">Ayah</option>
+                    <option value="ibu">Ibu</option>
+                    <option value="kakak">Kakak / Saudara Kandung</option>
+                    <option value="paman_bibi">Paman / Bibi</option>
+                    <option value="kakek_nenek">Kakek / Nenek</option>
+                    <option value="lainnya">Lainnya</option>
+                  </select>
+                </div>
+                <div class="form-group col-span-2">
+                  <label class="form-label" for="alamatWali">Alamat Wali</label>
+                  <textarea class="form-input" id="alamatWali" placeholder="Alamat domisili wali saat ini" rows="2" style="resize:vertical;"></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="noHpWali">Nomor HP / WhatsApp Wali</label>
+                  <input class="form-input" id="noHpWali" placeholder="08xxxxxxxxxx" type="tel">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:flex-end;gap:16px;">
+            <a href="dashboard.html" class="btn btn-outline-dark">Batal</a>
+            <button class="btn btn-secondary" type="submit">
+              <span class="material-symbols-outlined" style="font-size:18px;margin-right:8px;">save</span>
+              Simpan Data
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    .dash-wrapper{display:flex}
+  </style>
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
+
+

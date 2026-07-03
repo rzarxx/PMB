@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PMB University - Dashboard Overview</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#d9e3f6",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#1f2225",
+                      "on-secondary-fixed": "#281900",
+                      "surface-dim": "#d0dbed",
+                      "tertiary-fixed-dim": "#c4c7ca",
+                      "surface-variant": "#d9e3f6",
+                      "on-tertiary-fixed": "#191c1f",
+                      "on-secondary-fixed-variant": "#604100",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#86898d",
+                      "surface-container-low": "#eff4ff",
+                      "outline": "#74777f",
+                      "on-primary-container": "#708ab5",
+                      "on-background": "#121c2a",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#dee9fc",
+                      "secondary-container": "#feb316",
+                      "secondary-fixed": "#ffdead",
+                      "secondary": "#7f5700",
+                      "on-tertiary-fixed-variant": "#44474a",
+                      "outline-variant": "#c4c6cf",
+                      "inverse-primary": "#aec7f6",
+                      "surface": "#f8f9ff",
+                      "on-primary-fixed-variant": "#2d476f",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-tint": "#465f88",
+                      "on-secondary-container": "#6a4800",
+                      "tertiary": "#080b0e",
+                      "surface-bright": "#f8f9ff",
+                      "on-surface-variant": "#44474e",
+                      "on-surface": "#121c2a",
+                      "primary-container": "#002147",
+                      "primary": "#000a1e",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-fixed": "#001b3d",
+                      "background": "#f8f9ff",
+                      "tertiary-fixed": "#e0e2e6",
+                      "primary-fixed": "#d6e3ff",
+                      "inverse-surface": "#27313f",
+                      "primary-fixed-dim": "#aec7f6",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#ffba3b",
+                      "surface-container": "#e6eeff",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "stack-sm": "4px",
+                      "base": "8px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Work Sans"
+                      ],
+                      "label-md": [
+                              "Work Sans"
+                      ],
+                      "body-lg": [
+                              "Work Sans"
+                      ],
+                      "headline-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "display-lg-mobile": [
+                              "\"Source Serif 4\""
+                      ],
+                      "display-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "caption": [
+                              "Work Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f9ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c4c6cf;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #74777f;
+        }
+        
+        .timeline-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 100%;
+            height: 2px;
+            background-color: #d9e3f6; /* surface-variant */
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        
+        .timeline-step:last-child::after {
+            display: none;
+        }
+        
+        .timeline-step.completed::after {
+            background-color: #feb316; /* secondary-container */
+        }
+        
+        .timeline-step.active::after {
+            background-color: #d9e3f6; /* surface-variant */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex">
+<!-- SideNavBar (Shared Component JSON) -->
+<nav id="mobile-sidebar" class="h-screen w-64  fixed left-0  top-0 bg-tertiary dark:bg-tertiary-container flex flex-col h-full py-base bg-tertiary-container dark:bg-surface-variant flat no shadows z-20 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
+<!-- Brand Logo Area -->
+<div class="px-6 py-6 mb-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-tertiary dark:text-on-tertiary-container leading-tight">PMB University</h1>
+<p class="font-body-md text-caption text-on-tertiary-container">Admissions Portal</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<ul class="flex-1 px-4 space-y-2 overflow-y-auto">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200 text-secondary dark:text-secondary-fixed font-bold border-r-4 border-secondary translate-x-1 transition-transform duration-150" href="../dashboard_overview_status_pendaftaran/code.html">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200 text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant" href="../dashboard_biodata_data_akademik_detail/code.html">
+<span class="material-symbols-outlined text-xl">person</span>
+<span class="font-label-md text-label-md">Biodata</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200 text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant" href="../dashboard_biodata_data_akademik_detail/code.html">
+<span class="material-symbols-outlined text-xl">school</span>
+<span class="font-label-md text-label-md">Academic</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200 text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant" href="../dashboard_data_orang_tua_kontak_darurat/code.html">
+<span class="material-symbols-outlined text-xl">family_restroom</span>
+<span class="font-label-md text-label-md">Guardian</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200 text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant" href="../dashboard_pemilihan_program_studi_jalur/code.html">
+<span class="material-symbols-outlined text-xl">account_balance</span>
+<span class="font-label-md text-label-md">Program</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200 text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant" href="../dashboard_zero_friction_upload_dokumen/code.html">
+<span class="material-symbols-outlined text-xl">upload_file</span>
+<span class="font-label-md text-label-md">Documents</span>
+</a>
+</li>
+</ul>
+<!-- CTA Area -->
+<div class="p-6 mt-auto">
+<button class="w-full py-3 px-4 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-[0_4px_14px_0_rgba(127,87,0,0.12)] hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-colors">
+                Apply Now
+            </button>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar (Shared Component JSON) -->
+<header class="flex justify-between items-center px-margin-desktop h-16 w-full docked full-width top-0 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flat no shadows z-10 sticky top-0">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">PMB University</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search on Right -->
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-highest border-none rounded-full text-body-md focus:ring-2 focus:ring-primary outline-none text-on-surface w-64 placeholder-on-surface-variant" placeholder="Search..." type="text"/>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:text-primary dark:hover:text-primary-fixed-dim relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:text-primary dark:hover:text-primary-fixed-dim">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<!-- Profile Avatar -->
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-fixed ml-2 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+<img alt="Student Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a young university student in smart casual attire, brightly lit studio portrait, modern academic context, white background, conveying confidence and readiness for higher education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+
+<div class="md:hidden flex items-center justify-between bg-surface p-4 border-b border-outline-variant sticky top-0 z-40 w-full">
+    <div class="font-headline-md text-primary font-bold text-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">school</span>
+        PMB University
+    </div>
+    <button id="open-sidebar-btn" class="p-2 text-primary focus:outline-none hover:bg-surface-variant rounded transition-colors"><span class="material-symbols-outlined">menu</span></button>
+</div>
+<div id="sidebar-overlay" class="fixed inset-0 bg-primary/20 backdrop-blur-sm z-40 hidden transition-opacity md:hidden"></div>
+<main class="flex-1 p-8 md:ml-64 w-full md:w-[calc(100%-16rem)] lg:p-12 xl:px-margin-desktop xl:py-16 overflow-y-auto">
+<div class="max-w-container-max mx-auto space-y-stack-lg">
+<!-- Dashboard Header & Status -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<h2 class="font-display-lg text-display-lg-mobile lg:text-display-lg text-primary mb-2">Dashboard Overview</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Selamat datang, lanjutkan pendaftaran Anda.</p>
+</div>
+</section>
+<!-- Dynamic Status Banner (Draft State) -->
+<section class="bg-secondary-container/20 border-l-4 border-secondary-container rounded-r-xl p-6 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4 z-10">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container">assignment_late</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Status: Draft (Belum Finalisasi)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Selesaikan pengisian data dan unggah dokumen untuk melakukan finalisasi.</p>
+</div>
+</div>
+<div class="flex flex-col items-end z-10 min-w-[200px]">
+<div class="flex justify-between w-full mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Progress</span>
+<span class="font-label-md text-label-md font-bold text-secondary">80%</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[80%] rounded-full"></div>
+</div>
+<button class="mt-4 px-6 py-2 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-sm hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-colors">
+                                Lanjutkan Pengisian
+                            </button>
+</div>
+<div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-secondary-container/30 to-transparent opacity-50 pointer-events-none"></div>
+</section>
+<!-- Interactive Horizontal Stepper -->
+<section class="bg-surface-bright rounded-xl border border-outline-variant p-6 lg:p-8">
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-6 uppercase tracking-wider">Alur Pendaftaran</h4>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center relative">
+<!-- Line connector -->
+<div class="hidden md:block absolute top-6 left-[5%] right-[5%] h-[2px] bg-surface-variant z-0">
+<div class="h-full bg-secondary-container w-[25%] transition-all duration-500"></div>
+</div>
+<!-- Steps -->
+<div class="flex flex-col md:flex-row w-full justify-between gap-6 md:gap-0 z-10">
+<!-- Step 1: Active -->
+<div class="flex md:flex-col items-center gap-4 md:gap-2 relative w-full md:w-1/4 text-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0 ring-4 ring-surface-bright shadow-md transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-on-primary">edit_document</span>
+</div>
+<div class="text-left md:text-center pt-1 md:pt-2">
+<p class="font-label-md text-label-md text-primary font-bold">Isi Data</p>
+<p class="font-body-md text-caption text-primary-container hidden md:block">Sedang Berlangsung</p>
+</div>
+</div>
+<!-- Step 2: Pending -->
+<div class="flex md:flex-col items-center gap-4 md:gap-2 relative w-full md:w-1/4 text-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center shrink-0 ring-4 ring-surface-bright transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-on-surface-variant">upload_file</span>
+</div>
+<div class="text-left md:text-center pt-1 md:pt-2 opacity-70">
+<p class="font-label-md text-label-md text-on-surface-variant">Upload</p>
+<p class="font-body-md text-caption text-on-surface-variant hidden md:block">Menunggu</p>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex md:flex-col items-center gap-4 md:gap-2 relative w-full md:w-1/4 text-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center shrink-0 ring-4 ring-surface-bright transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-on-surface-variant">done_all</span>
+</div>
+<div class="text-left md:text-center pt-1 md:pt-2 opacity-70">
+<p class="font-label-md text-label-md text-on-surface-variant">Finalisasi</p>
+<p class="font-body-md text-caption text-on-surface-variant hidden md:block">Belum Tersedia</p>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex md:flex-col items-center gap-4 md:gap-2 relative w-full md:w-1/4 text-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center shrink-0 ring-4 ring-surface-bright transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-on-surface-variant">campaign</span>
+</div>
+<div class="text-left md:text-center pt-1 md:pt-2 opacity-70">
+<p class="font-label-md text-label-md text-on-surface-variant">Pengumuman</p>
+<p class="font-body-md text-caption text-on-surface-variant hidden md:block">Tahap Akhir</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Summary & Actions Section -->
+<section class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Quick Summary Card -->
+<div class="xl:col-span-8">
+<div class="bg-surface-bright rounded-xl border border-outline-variant shadow-sm h-full flex flex-col">
+<div class="border-b border-outline-variant px-6 py-5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">account_circle</span>
+<h3 class="font-headline-md text-headline-md text-primary">Informasi Pendaftar</h3>
+</div>
+<button class="text-primary hover:text-primary-fixed-variant transition-colors flex items-center gap-1 font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">edit</span> Edit Profil
+                                </button>
+</div>
+<div class="p-6 lg:p-8 flex-1">
+<div class="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Nama Lengkap</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Budi Santoso</p>
+</div>
+<div class="space-y-1">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">No Pendaftaran</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold font-mono">PMB-2024-0815</p>
+</div>
+<div class="space-y-1">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Jalur Seleksi</p>
+<div class="inline-flex items-center gap-2 bg-primary-fixed/30 text-primary-fixed-dim px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span class="font-label-md text-sm">Reguler</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">No WA / Kontak</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">+62 812-3456-7890</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions / Notifications Sidebar -->
+<div class="xl:col-span-4">
+<div class="bg-surface-bright rounded-xl border border-outline-variant shadow-sm h-full flex flex-col">
+<div class="border-b border-outline-variant px-6 py-5 bg-surface-container-low flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">notifications_active</span>
+<h3 class="font-headline-md text-headline-md text-primary">Notifikasi</h3>
+</div>
+<div class="p-0 overflow-y-auto max-h-[300px]">
+<ul class="divide-y divide-outline-variant">
+<li class="p-4 hover:bg-surface-container-lowest transition-colors flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-secondary-container text-sm">warning</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Data Orang Tua belum lengkap</p>
+<p class="font-body-md text-caption text-on-surface-variant mt-1">Harap lengkapi data wali sebelum 31 Agustus.</p>
+<a class="font-label-md text-caption text-primary hover:underline mt-2 inline-block" href="javascript:void(0);">Lengkapi Sekarang</a>
+</div>
+</li>
+<li class="p-4 hover:bg-surface-container-lowest transition-colors flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/20 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm">info</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Pendaftaran Dibuka</p>
+<p class="font-body-md text-caption text-on-surface-variant mt-1">Selamat datang di portal PMB. Panduan pengisian tersedia.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="p-4 mt-auto border-t border-outline-variant bg-surface-container-lowest text-center">
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed-variant transition-colors" href="javascript:void(0);">Lihat Semua Notifikasi</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Landing Page Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const topNavMenu = document.getElementById('top-nav-menu');
+    const loginBtn = document.getElementById('top-login-btn');
+    
+    if (mobileMenuBtn && topNavMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            topNavMenu.classList.toggle('hidden');
+            topNavMenu.classList.toggle('flex');
+            topNavMenu.classList.toggle('flex-col');
+            topNavMenu.classList.toggle('absolute');
+            topNavMenu.classList.toggle('top-20');
+            topNavMenu.classList.toggle('left-0');
+            topNavMenu.classList.toggle('w-full');
+            topNavMenu.classList.toggle('bg-surface');
+            topNavMenu.classList.toggle('p-4');
+            topNavMenu.classList.toggle('shadow-lg');
+            topNavMenu.classList.toggle('z-40');
+            topNavMenu.classList.toggle('border-b');
+            
+            if (loginBtn) {
+                loginBtn.classList.toggle('hidden');
+                loginBtn.classList.toggle('flex');
+                loginBtn.classList.toggle('mt-4');
+                loginBtn.classList.toggle('w-full');
+            }
+        });
+    }
+
+    // 2. Dashboard Sidebar Toggle
+    const openSidebarBtn = document.getElementById('open-sidebar-btn');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
+    if (openSidebarBtn && mobileSidebar && sidebarOverlay) {
+        openSidebarBtn.addEventListener('click', () => {
+            mobileSidebar.classList.remove('-translate-x-full');
+            sidebarOverlay.classList.remove('hidden');
+        });
+        
+        sidebarOverlay.addEventListener('click', () => {
+            mobileSidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+    }
+});
+</script>
+</body></html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jalur Prestasi - PMB University</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#191c1f",
+                        "secondary": "#7f5700",
+                        "outline": "#74777f",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed": "#ffdead",
+                        "primary-fixed": "#d6e3ff",
+                        "tertiary-container": "#1f2225",
+                        "on-surface-variant": "#44474e",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#001b3d",
+                        "surface-dim": "#d0dbed",
+                        "primary": "#000a1e",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "on-background": "#121c2a",
+                        "on-tertiary-container": "#86898d",
+                        "surface-tint": "#465f88",
+                        "secondary-fixed-dim": "#ffba3b",
+                        "on-surface": "#121c2a",
+                        "on-secondary-container": "#6a4800",
+                        "surface-container": "#e6eeff",
+                        "secondary-container": "#feb316",
+                        "on-secondary-fixed": "#281900",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#604100",
+                        "surface-variant": "#d9e3f6",
+                        "inverse-surface": "#27313f",
+                        "tertiary-fixed": "#e0e2e6",
+                        "outline-variant": "#c4c6cf",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#d9e3f6",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#dee9fc",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "primary-container": "#002147",
+                        "surface": "#f8f9ff",
+                        "on-primary-container": "#708ab5",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#080b0e",
+                        "inverse-primary": "#aec7f6",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "base": "8px",
+                        "stack-sm": "4px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Work Sans"],
+                        "label-md": ["Work Sans"],
+                        "headline-lg": ["\"Source Serif 4\""],
+                        "caption": ["Work Sans"],
+                        "body-md": ["Work Sans"],
+                        "display-lg": ["\"Source Serif 4\""],
+                        "headline-md": ["\"Source Serif 4\""],
+                        "display-lg-mobile": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-on-surface w-full top-0 sticky border-b border-outline-variant dark:border-outline z-50">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                PMB University
+            </div>
+<div class="hidden md:flex space-x-gutter">
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 ease-in-out" href="../halaman_utama_pmb_university/code.html">Home</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 ease-in-out" href="javascript:void(0);">Admission Paths</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 ease-in-out" href="javascript:void(0);">Timeline</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 ease-in-out" href="javascript:void(0);">Contact</a>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 ease-in-out">
+                Register
+            </button>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative bg-surface-container py-stack-lg lg:py-[120px] overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid md:grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-primary mb-stack-md">Jalur Prestasi</h1>
+<p class="font-body-lg text-on-surface-variant mb-stack-lg">Raih mimpimu di PMB University melalui dedikasi dan keunggulan. Jalur Prestasi dirancang khusus bagi calon mahasiswa yang memiliki pencapaian luar biasa di bidang akademik maupun non-akademik, menawarkan keuntungan bebas tes tulis.</p>
+<a class="inline-block bg-secondary text-on-secondary font-label-md text-label-md px-8 py-4 rounded hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm" href="#daftar">Daftar Jalur Prestasi</a>
+</div>
+<div class="relative h-64 md:h-96 rounded-xl overflow-hidden border border-outline-variant">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A bright, high-key photograph of a diverse group of ecstatic high school students holding a glowing, stylized golden trophy and acceptance letters in front of a modern university building. The scene is illuminated with clear, natural daylight, emphasizing a sense of achievement and a prestige academic environment in a corporate modern aesthetic with navy and gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk_iLIhD5SBHAjQH68D0ZwhBU9PH-Rn4_Xtupi3AVIXjjXG6CH3lfNx7-Kmgc2ijOB3aVkpNafZWRIl6XfIri7Rdx8qaLQdXmyy2lpGod_3W7s7uYWJYAJSkZOMspvpt7aEy28vYxiHpJkgmI8iEvwhZa_-i8JHbMYXbi8qF1CTBIo5gjUJG9U0SBhp7W3qgqOrlTuxoMucYhGEMwPDb1YKkQt1oS_WTizszrJGZDiM636mQetUcoxMct_VCwQrtSTyOcn7fhSrNU"/>
+</div>
+</div>
+</section>
+<!-- Requirements & Benefits Bento Grid -->
+<section class="py-stack-lg lg:py-[80px] max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Syarat Nilai Rapor -->
+<div class="bg-surface border border-outline-variant rounded-xl p-stack-lg hover:bg-surface-container-low transition-colors col-span-1 md:col-span-2">
+<div class="flex items-center mb-stack-md text-primary">
+<span class="material-symbols-outlined text-[32px] mr-base">menu_book</span>
+<h2 class="font-headline-md text-headline-md">Syarat Nilai Rapor</h2>
+</div>
+<p class="font-body-md text-on-surface-variant mb-stack-md">Konsistensi akademik adalah kunci. Kami menilai prestasi belajar Anda selama di Sekolah Menengah Atas.</p>
+<ul class="space-y-stack-sm text-on-surface">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-base mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Rata-rata nilai rapor semester 1 hingga 5 minimal <strong>85.00</strong>.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-base mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Mata pelajaran utama (Matematika, Bahasa Inggris, Bahasa Indonesia) tidak boleh di bawah 80.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-base mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Melampirkan scan rapor asli yang telah dilegalisir oleh pihak sekolah.</span>
+</li>
+</ul>
+</div>
+<!-- Keuntungan -->
+<div class="bg-primary text-on-primary rounded-xl p-stack-lg flex flex-col justify-center">
+<div class="flex items-center mb-stack-md text-secondary-fixed">
+<span class="material-symbols-outlined text-[32px] mr-base">workspace_premium</span>
+<h2 class="font-headline-md text-headline-md">Keuntungan</h2>
+</div>
+<ul class="space-y-stack-md">
+<li class="flex items-center bg-primary-container p-3 rounded border border-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-secondary-fixed mr-base">no_sim</span>
+<span class="font-label-md">Bebas Tes Tulis</span>
+</li>
+<li class="flex items-center bg-primary-container p-3 rounded border border-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-secondary-fixed mr-base">payments</span>
+<span class="font-label-md">Potongan Biaya Pangkal 50%</span>
+</li>
+<li class="flex items-center bg-primary-container p-3 rounded border border-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-secondary-fixed mr-base">priority</span>
+<span class="font-label-md">Prioritas Asrama</span>
+</li>
+</ul>
+</div>
+<!-- Sertifikat yang Diterima -->
+<div class="bg-surface border border-outline-variant rounded-xl p-stack-lg hover:bg-surface-container-low transition-colors col-span-1 md:col-span-3">
+<div class="flex items-center mb-stack-md text-primary">
+<span class="material-symbols-outlined text-[32px] mr-base">emoji_events</span>
+<h2 class="font-headline-md text-headline-md">Sertifikat Juara yang Diakui</h2>
+</div>
+<div class="grid md:grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="border border-surface-variant rounded p-stack-md">
+<h3 class="font-label-md text-primary mb-2">Prestasi Akademik</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Olimpiade Sains Nasional (OSN), Lomba Karya Tulis Ilmiah tingkat Provinsi/Nasional, Kejuaraan Robotika, Debat Bahasa Inggris (NSDC).</p>
+</div>
+<div class="border border-surface-variant rounded p-stack-md">
+<h3 class="font-label-md text-primary mb-2">Prestasi Non-Akademik</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Kejuaraan Olahraga (PON, POPNAS, Porprov), Festival Seni Budaya tingkat Nasional, Hafidz Quran (minimal 5 Juz), Ketua OSIS.</p>
+</div>
+</div>
+<p class="font-caption text-outline mt-stack-md">*Sertifikat kejuaraan minimal juara 1, 2, atau 3 pada tingkat Kabupaten/Kota, Provinsi, atau Nasional dalam 3 tahun terakhir.</p>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="bg-surface-bright py-stack-lg lg:py-[80px]">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-stack-lg">Jadwal Seleksi Jalur Prestasi</h2>
+<div class="flex flex-col md:flex-row justify-between items-start relative">
+<!-- Connecting Line -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-surface-variant -z-10 translate-y-[-50%]"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center flex-1 mb-stack-md md:mb-0 bg-surface-bright px-2">
+<div class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md mb-stack-sm shadow-sm border-4 border-surface-bright">1</div>
+<h3 class="font-label-md text-primary text-center">Pendaftaran Online</h3>
+<p class="font-caption text-on-surface-variant text-center">1 Feb - 31 Mar 2024</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center flex-1 mb-stack-md md:mb-0 bg-surface-bright px-2">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md mb-stack-sm shadow-[0_4px_12px_rgba(0,10,30,0.12)] border-4 border-surface-bright">2</div>
+<h3 class="font-label-md text-primary text-center">Verifikasi Berkas</h3>
+<p class="font-caption text-on-surface-variant text-center">1 - 15 Apr 2024</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center flex-1 mb-stack-md md:mb-0 bg-surface-bright px-2">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-md mb-stack-sm border-4 border-surface-bright">3</div>
+<h3 class="font-label-md text-outline text-center">Wawancara (Opsional)</h3>
+<p class="font-caption text-outline text-center">20 - 25 Apr 2024</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center flex-1 bg-surface-bright px-2">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-md mb-stack-sm border-4 border-surface-bright">4</div>
+<h3 class="font-label-md text-outline text-center">Pengumuman Kelulusan</h3>
+<p class="font-caption text-outline text-center">2 Mei 2024</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary-container dark:bg-tertiary w-full mt-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-4 mb-stack-md font-headline-sm text-headline-sm text-on-tertiary-container dark:text-tertiary-fixed">
+                PMB University
+            </div>
+<a class="text-on-tertiary-container dark:text-tertiary-fixed-dim font-body-md text-body-md hover:text-secondary-container dark:hover:text-secondary transition-opacity duration-150" href="javascript:void(0);">Campus Address</a>
+<a class="text-on-tertiary-container dark:text-tertiary-fixed-dim font-body-md text-body-md hover:text-secondary-container dark:hover:text-secondary transition-opacity duration-150" href="javascript:void(0);">Contact Info</a>
+<a class="text-on-tertiary-container dark:text-tertiary-fixed-dim font-body-md text-body-md hover:text-secondary-container dark:hover:text-secondary transition-opacity duration-150" href="javascript:void(0);">Academic Departments</a>
+<a class="text-on-tertiary-container dark:text-tertiary-fixed-dim font-body-md text-body-md hover:text-secondary-container dark:hover:text-secondary transition-opacity duration-150" href="javascript:void(0);">Privacy Policy</a>
+<div class="col-span-1 md:col-span-4 mt-stack-md text-on-tertiary-container dark:text-tertiary-fixed-dim font-body-md text-body-md">
+                © 2024 University Admissions Office. All rights reserved.
+            </div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Landing Page Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const topNavMenu = document.getElementById('top-nav-menu');
+    const loginBtn = document.getElementById('top-login-btn');
+    
+    if (mobileMenuBtn && topNavMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            topNavMenu.classList.toggle('hidden');
+            topNavMenu.classList.toggle('flex');
+            topNavMenu.classList.toggle('flex-col');
+            topNavMenu.classList.toggle('absolute');
+            topNavMenu.classList.toggle('top-20');
+            topNavMenu.classList.toggle('left-0');
+            topNavMenu.classList.toggle('w-full');
+            topNavMenu.classList.toggle('bg-surface');
+            topNavMenu.classList.toggle('p-4');
+            topNavMenu.classList.toggle('shadow-lg');
+            topNavMenu.classList.toggle('z-40');
+            topNavMenu.classList.toggle('border-b');
+            
+            if (loginBtn) {
+                loginBtn.classList.toggle('hidden');
+                loginBtn.classList.toggle('flex');
+                loginBtn.classList.toggle('mt-4');
+                loginBtn.classList.toggle('w-full');
+            }
+        });
+    }
+
+    // 2. Dashboard Sidebar Toggle
+    const openSidebarBtn = document.getElementById('open-sidebar-btn');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
+    if (openSidebarBtn && mobileSidebar && sidebarOverlay) {
+        openSidebarBtn.addEventListener('click', () => {
+            mobileSidebar.classList.remove('-translate-x-full');
+            sidebarOverlay.classList.remove('hidden');
+        });
+        
+        sidebarOverlay.addEventListener('click', () => {
+            mobileSidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+    }
+});
+</script>
+</body></html>

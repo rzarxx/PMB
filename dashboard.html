@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - IPB Cirebon</title>
+  <meta name="description" content="Dashboard pendaftaran mahasiswa baru IPB Cirebon. Pantau status dan progres pendaftaran Anda.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    *,:before,:after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Work Sans','Helvetica Neue',sans-serif;background:#f8f9ff;color:#121c2a;}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#c4c6cf;border-radius:3px}
+    /* stat cards */
+    .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    @media(max-width:1024px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.stat-grid{grid-template-columns:1fr}}
+    .stat-card{background:#fff;border:1px solid #e8eaf0;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s}
+    .stat-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+    .stat-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+    .stat-value{font-family:'Source Serif 4',serif;font-size:28px;font-weight:700;line-height:1.1}
+    .stat-label{font-size:12px;color:#74777f;font-weight:500;letter-spacing:.03em}
+    /* sections */
+    .content-section{background:#fff;border:1px solid #e8eaf0;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .section-header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid #e8eaf0;background:#fafbff}
+    .section-header-left{display:flex;align-items:center;gap:10px}
+    .section-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#002147;flex-shrink:0}
+    .section-icon .material-symbols-outlined{font-size:18px;color:#fff}
+    .section-title{font-family:'Source Serif 4',serif;font-size:15px;font-weight:600;color:#000a1e}
+    .section-body{padding:20px 24px}
+    /* step tracker */
+    .step-track{display:flex;gap:0;position:relative}
+    .step-item-new{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;gap:8px}
+    .step-item-new:not(:last-child)::after{content:'';position:absolute;top:20px;left:50%;right:-50%;height:2px;background:#e8eaf0;z-index:0}
+    .step-item-new.done:not(:last-child)::after{background:#feb316}
+    .step-dot{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;position:relative;z-index:1;border:2px solid #e8eaf0;background:#fff;color:#74777f;transition:all .3s}
+    .step-dot.done{background:#feb316;border-color:#feb316;color:#6a4800}
+    .step-dot.active{background:#000a1e;border-color:#000a1e;color:#fff;box-shadow:0 0 0 4px rgba(0,10,30,.12)}
+    .step-label{font-size:11px;font-weight:600;color:#74777f;text-align:center;letter-spacing:.03em}
+    .step-item-new.active .step-label{color:#000a1e}
+    .step-item-new.done .step-label{color:#7f5700}
+    @media(max-width:640px){.step-track{flex-direction:column;gap:8px}.step-item-new:not(:last-child)::after{display:none}.step-item-new{flex-direction:row;align-items:center;gap:12px}.step-label{text-align:left}}
+    /* notif */
+    .notif-item{display:flex;gap:12px;padding:14px 24px;border-bottom:1px solid #f0f2f8;transition:background .15s}
+    .notif-item:hover{background:#fafbff}
+    .notif-item:last-child{border-bottom:none}
+    .notif-dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    /* info table */
+    .info-table{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
+    @media(max-width:640px){.info-table{grid-template-columns:1fr;gap:12px}}
+    .info-field{display:flex;flex-direction:column;gap:3px}
+    .info-label{font-size:11px;color:#74777f;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+    .info-value{font-size:16px;font-weight:600;color:#121c2a}
+    /* two col layout for bottom sections */
+    .two-col{display:grid;grid-template-columns:3fr 2fr;gap:20px}
+    @media(max-width:900px){.two-col{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo" style="background:transparent;"><img src="https://ipbcirebon.ac.id/assets/img/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+      <div>
+        <div class="sidebar-brand">IPB Cirebon</div>
+        <div class="sidebar-tagline">Admissions Portal</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-section">Menu Utama</div>
+      <a href="dashboard.html" class="sidebar-nav-item active">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Overview</span>
+      </a>
+      <a href="dashboard-biodata.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">person</span>
+        <span>Biodata</span>
+      </a>
+      <a href="dashboard-prodi.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">account_balance</span>
+        <span>Program Studi</span>
+      </a>
+      <a href="dashboard-ortu.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">family_restroom</span>
+        <span>Data Orang Tua</span>
+      </a>
+      <a href="dashboard-upload.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">upload_file</span>
+        <span>Upload Dokumen</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user-card">
+        <img class="sidebar-user-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU" alt="Avatar">
+        <div>
+          <div class="sidebar-user-name">Budi Santoso</div>
+          <div class="sidebar-user-id">PMB-2024-0815</div>
+        </div>
+      </div>
+      <a href="login.html" class="sidebar-nav-item" style="color:#f87171;">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Keluar</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="dashboard-main" id="dashMain">
+
+    <!-- TOPBAR -->
+    <header class="dashboard-topbar">
+      <div class="topbar-left">
+        <button class="dashboard-topbar-btn" id="sidebarToggle" aria-label="Toggle sidebar">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <span class="topbar-page-title">Dashboard Overview</span>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-icon-btn" title="Notifikasi">
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="topbar-notif-dot"></span>
+        </button>
+        <img class="topbar-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU" alt="Avatar">
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="dashboard-content">
+      <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:24px;">
+
+        <!-- WELCOME BANNER -->
+        <div style="background:linear-gradient(135deg,#000a1e 60%,#002147 100%);border-radius:18px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden;position:relative;">
+          <div style="position:absolute;right:-40px;top:-40px;width:220px;height:220px;border-radius:50%;background:rgba(254,179,22,.1);pointer-events:none;"></div>
+          <div style="position:absolute;right:60px;bottom:-60px;width:160px;height:160px;border-radius:50%;background:rgba(254,179,22,.06);pointer-events:none;"></div>
+          <div style="position:relative;z-index:1;">
+            <p style="font-size:12px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;">Selamat datang kembali</p>
+            <h2 style="font-family:'Source Serif 4',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:8px;">Halo, Budi Santoso!</h2>
+            <p style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.5;max-width:460px;">Anda memiliki <strong style="color:#feb316;">3 langkah lagi</strong> untuk menyelesaikan pendaftaran. Segera lengkapi data orang tua dan upload dokumen.</p>
+            <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;">
+              <a href="dashboard-biodata.html" style="background:#feb316;color:#3d2b00;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+                <span class="material-symbols-outlined" style="font-size:16px;">edit_document</span>Lanjutkan Pengisian
+              </a>
+              <a href="dashboard-upload.html" style="background:rgba(255,255,255,.12);color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:6px;">
+                <span class="material-symbols-outlined" style="font-size:16px;">upload_file</span>Upload Dokumen
+              </a>
+            </div>
+          </div>
+          <div style="position:relative;z-index:1;flex-shrink:0;display:none;" class="lg-show">
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px;min-width:160px;text-align:center;">
+              <div style="font-size:36px;font-weight:800;color:#feb316;font-family:'Source Serif 4',serif;line-height:1;">80%</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:4px;">Progress Pendaftaran</div>
+              <div style="margin-top:12px;background:rgba(255,255,255,.1);border-radius:100px;height:6px;overflow:hidden;">
+                <div style="width:80%;height:100%;background:linear-gradient(90deg,#feb316,#ffcf60);border-radius:100px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAT CARDS -->
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#e8f4fd;"><span class="material-symbols-outlined" style="color:#1a6fa8;">person</span></div>
+            <div class="stat-label">Status Biodata</div>
+            <div class="stat-value" style="color:#166534;font-size:18px;">Lengkap</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fef9ec;"><span class="material-symbols-outlined" style="color:#c67c00;">account_balance</span></div>
+            <div class="stat-label">Program Studi</div>
+            <div class="stat-value" style="color:#c67c00;font-size:18px;">Dipilih</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fff1f0;"><span class="material-symbols-outlined" style="color:#ba1a1a;">family_restroom</span></div>
+            <div class="stat-label">Data Orang Tua</div>
+            <div class="stat-value" style="color:#ba1a1a;font-size:18px;">Belum Lengkap</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fff1f0;"><span class="material-symbols-outlined" style="color:#ba1a1a;">upload_file</span></div>
+            <div class="stat-label">Dokumen Diupload</div>
+            <div class="stat-value" style="color:#000a1e;">1 / 5</div>
+          </div>
+        </div>
+
+        <!-- PROGRESS STEP TRACKER -->
+        <div class="content-section">
+          <div class="section-header">
+            <div class="section-header-left">
+              <div class="section-icon"><span class="material-symbols-outlined">route</span></div>
+              <span class="section-title">Alur Pendaftaran</span>
+            </div>
+            <span style="font-size:12px;color:#74777f;">Tahap 1 dari 4</span>
+          </div>
+          <div class="section-body">
+            <div class="step-track">
+              <div class="step-item-new done">
+                <div class="step-dot done"><span class="material-symbols-outlined" style="font-size:18px;">check</span></div>
+                <span class="step-label">Registrasi Akun</span>
+              </div>
+              <div class="step-item-new active">
+                <div class="step-dot active"><span class="material-symbols-outlined" style="font-size:18px;">edit_document</span></div>
+                <span class="step-label">Isi Data</span>
+              </div>
+              <div class="step-item-new">
+                <div class="step-dot"><span class="material-symbols-outlined" style="font-size:18px;">upload_file</span></div>
+                <span class="step-label">Upload Dokumen</span>
+              </div>
+              <div class="step-item-new">
+                <div class="step-dot"><span class="material-symbols-outlined" style="font-size:18px;">done_all</span></div>
+                <span class="step-label">Finalisasi</span>
+              </div>
+              <div class="step-item-new">
+                <div class="step-dot"><span class="material-symbols-outlined" style="font-size:18px;">campaign</span></div>
+                <span class="step-label">Pengumuman</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFO & NOTIF -->
+        <div class="two-col">
+          <!-- Informasi Pendaftar -->
+          <div class="content-section">
+            <div class="section-header">
+              <div class="section-header-left">
+                <div class="section-icon"><span class="material-symbols-outlined">account_circle</span></div>
+                <span class="section-title">Informasi Pendaftar</span>
+              </div>
+              <a href="dashboard-biodata.html" style="font-size:13px;font-weight:600;color:#000a1e;text-decoration:none;display:flex;align-items:center;gap:4px;opacity:.75;transition:opacity .15s;" onmouseenter="this.style.opacity=1" onmouseleave="this.style.opacity='.75'">
+                <span class="material-symbols-outlined" style="font-size:15px;">edit</span>Edit
+              </a>
+            </div>
+            <div class="section-body">
+              <div class="info-table">
+                <div class="info-field">
+                  <span class="info-label">Nama Lengkap</span>
+                  <span class="info-value">Budi Santoso</span>
+                </div>
+                <div class="info-field">
+                  <span class="info-label">No Pendaftaran</span>
+                  <span class="info-value" style="font-family:monospace;color:#000a1e;">PMB-2024-0815</span>
+                </div>
+                <div class="info-field">
+                  <span class="info-label">Jalur Seleksi</span>
+                  <span style="display:inline-flex;align-items:center;gap:6px;background:#e8f4fd;color:#1a6fa8;padding:4px 12px;border-radius:100px;font-size:13px;font-weight:600;">
+                    <span class="material-symbols-outlined" style="font-size:14px;">school</span>Mandiri
+                  </span>
+                </div>
+                <div class="info-field">
+                  <span class="info-label">Nomor HP</span>
+                  <span class="info-value">+62 812-3456-7890</span>
+                </div>
+                <div class="info-field">
+                  <span class="info-label">Program Studi</span>
+                  <span class="info-value">Teknik Informatika</span>
+                </div>
+                <div class="info-field">
+                  <span class="info-label">Tanggal Daftar</span>
+                  <span class="info-value">12 Juli 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notifikasi -->
+          <div class="content-section">
+            <div class="section-header">
+              <div class="section-header-left">
+                <div class="section-icon"><span class="material-symbols-outlined">notifications_active</span></div>
+                <span class="section-title">Notifikasi</span>
+              </div>
+              <span style="background:#ba1a1a;color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;">2 baru</span>
+            </div>
+            <div>
+              <div class="notif-item">
+                <div class="notif-dot" style="background:#fff8e1;"><span class="material-symbols-outlined" style="font-size:18px;color:#f59e0b;">warning</span></div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;color:#121c2a;">Data Orang Tua belum lengkap</p>
+                  <p style="font-size:12px;color:#74777f;margin-top:3px;line-height:1.4;">Harap lengkapi sebelum 31 Agustus 2024.</p>
+                  <a href="dashboard-ortu.html" style="font-size:12px;color:#000a1e;font-weight:600;display:inline-block;margin-top:6px;text-decoration:none;">Lengkapi Sekarang →</a>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-dot" style="background:#fff1f0;"><span class="material-symbols-outlined" style="font-size:18px;color:#ba1a1a;">upload_file</span></div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;color:#121c2a;">3 Dokumen belum diunggah</p>
+                  <p style="font-size:12px;color:#74777f;margin-top:3px;line-height:1.4;">Ijazah, KTP, dan Rapor perlu diunggah.</p>
+                  <a href="dashboard-upload.html" style="font-size:12px;color:#000a1e;font-weight:600;display:inline-block;margin-top:6px;text-decoration:none;">Upload Sekarang →</a>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-dot" style="background:#f0fdf4;"><span class="material-symbols-outlined" style="font-size:18px;color:#166534;">check_circle</span></div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;color:#121c2a;">Biodata berhasil disimpan</p>
+                  <p style="font-size:12px;color:#74777f;margin-top:3px;line-height:1.4;">Data biodata diri sudah tersimpan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <style>
+    @media(min-width:900px){.lg-show{display:block!important}}
+    .dash-wrapper{display:flex}
+  </style>
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
+
+

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Dokumen - IPB Cirebon</title>
+  <meta name="description" content="Upload dokumen persyaratan pendaftaran mahasiswa baru IPB Cirebon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    *,:before,:after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Work Sans','Helvetica Neue',sans-serif;background:#f8f9ff;color:#121c2a;}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#c4c6cf;border-radius:3px}
+    
+    .upload-card{display:flex;flex-direction:column;gap:12px;padding:24px;border:2px dashed #c4c6cf;border-radius:16px;background:#fafbff;text-align:center;transition:all .2s;cursor:pointer;position:relative;overflow:hidden}
+    .upload-card:hover,.upload-card.dragover{border-color:#1a6fa8;background:#f0f7fd}
+    .upload-card-icon{width:56px;height:56px;border-radius:14px;background:#fff;border:1px solid #e8eaf0;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .upload-card-icon .material-symbols-outlined{font-size:28px;color:#74777f}
+    .upload-card:hover .upload-card-icon .material-symbols-outlined{color:#1a6fa8}
+    .upload-card-title{font-weight:600;font-size:15px;color:#121c2a;margin-bottom:4px}
+    .upload-card-desc{font-size:12px;color:#74777f;line-height:1.4}
+    
+    .upload-list-item{display:flex;align-items:center;gap:16px;padding:16px 20px;border:1px solid #e8eaf0;border-radius:12px;background:#fff;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.02)}
+    .upload-item-icon{width:42px;height:42px;border-radius:10px;background:#e8f4fd;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .upload-item-icon .material-symbols-outlined{color:#1a6fa8;font-size:22px}
+    .upload-item-info{flex-grow:1;min-width:0}
+    .upload-item-name{font-weight:600;font-size:14px;color:#121c2a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .upload-item-meta{font-size:12px;color:#74777f;margin-top:2px}
+    .upload-item-actions{display:flex;gap:8px}
+    .btn-icon{width:32px;height:32px;border-radius:8px;border:none;background:#f4f5f9;color:#44474f;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s}
+    .btn-icon:hover{background:#e8eaf0;color:#121c2a}
+    .btn-icon.danger:hover{background:#fff1f0;color:#ba1a1a}
+  </style>
+</head>
+<body>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo" style="background:transparent;"><img src="https://ipbcirebon.ac.id/assets/img/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+      <div>
+        <div class="sidebar-brand">IPB Cirebon</div>
+        <div class="sidebar-tagline">Admissions Portal</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-section">Menu Utama</div>
+      <a href="dashboard.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Overview</span>
+      </a>
+      <a href="dashboard-biodata.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">person</span>
+        <span>Biodata</span>
+      </a>
+      <a href="dashboard-prodi.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">account_balance</span>
+        <span>Program Studi</span>
+      </a>
+      <a href="dashboard-ortu.html" class="sidebar-nav-item">
+        <span class="material-symbols-outlined">family_restroom</span>
+        <span>Data Orang Tua</span>
+      </a>
+      <a href="dashboard-upload.html" class="sidebar-nav-item active">
+        <span class="material-symbols-outlined">upload_file</span>
+        <span>Upload Dokumen</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user-card">
+        <img class="sidebar-user-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU" alt="Avatar">
+        <div>
+          <div class="sidebar-user-name">Budi Santoso</div>
+          <div class="sidebar-user-id">PMB-2024-0815</div>
+        </div>
+      </div>
+      <a href="login.html" class="sidebar-nav-item" style="color:#f87171;">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Keluar</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="dashboard-main" id="dashMain">
+
+    <header class="dashboard-topbar">
+      <div class="topbar-left">
+        <button class="dashboard-topbar-btn" id="sidebarToggle" aria-label="Toggle sidebar">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <span class="topbar-page-title">Upload Dokumen</span>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-icon-btn" title="Notifikasi">
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="topbar-notif-dot"></span>
+        </button>
+        <img class="topbar-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVv1czrhzOhGehB4tS0POV2Lu8w_ZwwMeXiWVaVTRgRQ_HboF2aN2Ze0llT442BGAAKrNxn74IXXjfot9QKR5Tm3js3cfMBBGhcQIdrdxkJ58Ij0Ji7GYVFKHOcq0p1BC3eXOwVvESL6RQ2r4g84Q-A0dx3xvHe1skfqongnfyMuIqjXbr9IvrZQ1p1eHGNXcdl1_WdtOPfBSE-rMCIbLKGwZBVsut6eLs842le8VNnCGvlz_OxNoQ4zUUK_K_X5ILvit7xNy7YBU" alt="Avatar">
+      </div>
+    </header>
+
+    <main class="dashboard-content">
+      <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
+
+        <div class="dash-page-header">
+          <h2 class="dash-page-title">Upload Dokumen Persyaratan</h2>
+          <p class="dash-page-subtitle">Unggah semua dokumen yang diperlukan. Pastikan file dalam format PDF, JPG, atau PNG dengan ukuran maksimal 2MB per file.</p>
+        </div>
+
+        <div class="dashboard-form">
+
+          <!-- Progress -->
+          <div class="db-section">
+            <div class="db-section-body" style="padding:24px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <h3 style="font-size:14px;font-weight:600;color:#121c2a;">Progres Upload Dokumen</h3>
+                <span style="font-size:13px;font-weight:700;color:#000a1e;">1 / 5 Dokumen</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:20%;background:linear-gradient(90deg,#002147,#005b9f);"></div>
+              </div>
+              <p style="font-size:12px;color:#74777f;margin-top:12px;">Anda perlu melengkapi semua dokumen wajib (bertanda *) untuk dapat melakukan finalisasi pendaftaran.</p>
+            </div>
+          </div>
+
+          <!-- Dokumen Wajib -->
+          <div class="db-section">
+            <div class="db-section-header">
+              <div class="db-section-header-icon" style="background:#e8f4fd;">
+                <span class="material-symbols-outlined" style="color:#1a6fa8;">folder_open</span>
+              </div>
+              <h3 class="db-section-title">Dokumen Wajib</h3>
+            </div>
+            <div class="db-section-body">
+              
+              <!-- KTP -->
+              <div style="margin-bottom:24px;">
+                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+                  1. Scan KTP Asli <span style="color:#ba1a1a;">*</span>
+                </h4>
+                
+                <!-- Uploaded State -->
+                <div class="upload-list-item">
+                  <div class="upload-item-icon">
+                    <span class="material-symbols-outlined">image</span>
+                  </div>
+                  <div class="upload-item-info">
+                    <div class="upload-item-name">KTP_Budi_Santoso_2024.jpg</div>
+                    <div class="upload-item-meta">1.2 MB • Diunggah pada 15 Jul 2024, 10:30</div>
+                  </div>
+                  <div class="upload-item-actions">
+                    <button class="btn-icon" title="Lihat"><span class="material-symbols-outlined" style="font-size:18px;">visibility</span></button>
+                    <button class="btn-icon danger" title="Hapus"><span class="material-symbols-outlined" style="font-size:18px;">delete</span></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KK -->
+              <div style="margin-bottom:24px;">
+                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+                  2. Scan Kartu Keluarga (KK) <span style="color:#ba1a1a;">*</span>
+                </h4>
+                <div class="upload-card">
+                  <div class="upload-card-icon"><span class="material-symbols-outlined">cloud_upload</span></div>
+                  <div>
+                    <div class="upload-card-title">Tarik & Lepas file di sini</div>
+                    <div class="upload-card-desc">atau <span style="color:#1a6fa8;font-weight:600;">Klik untuk mencari file</span></div>
+                  </div>
+                  <div style="font-size:11px;color:#74777f;margin-top:4px;">Format: PDF, JPG, PNG (Maks 2MB)</div>
+                </div>
+              </div>
+
+              <!-- Ijazah / SKL -->
+              <div style="margin-bottom:24px;">
+                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+                  3. Scan Ijazah / Surat Keterangan Lulus <span style="color:#ba1a1a;">*</span>
+                </h4>
+                <div class="upload-card">
+                  <div class="upload-card-icon"><span class="material-symbols-outlined">cloud_upload</span></div>
+                  <div>
+                    <div class="upload-card-title">Tarik & Lepas file di sini</div>
+                    <div class="upload-card-desc">atau <span style="color:#1a6fa8;font-weight:600;">Klik untuk mencari file</span></div>
+                  </div>
+                  <div style="font-size:11px;color:#74777f;margin-top:4px;">Format: PDF (Maks 2MB)</div>
+                </div>
+              </div>
+
+              <!-- Rapor -->
+              <div style="margin-bottom:24px;">
+                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+                  4. Rapor Semester 1 - 5 <span style="color:#ba1a1a;">*</span>
+                </h4>
+                <div class="upload-card">
+                  <div class="upload-card-icon"><span class="material-symbols-outlined">cloud_upload</span></div>
+                  <div>
+                    <div class="upload-card-title">Tarik & Lepas file di sini</div>
+                    <div class="upload-card-desc">atau <span style="color:#1a6fa8;font-weight:600;">Klik untuk mencari file</span></div>
+                  </div>
+                  <div style="font-size:11px;color:#74777f;margin-top:4px;">Format: PDF (Gabungkan jadi 1 file, Maks 5MB)</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Dokumen Pendukung -->
+          <div class="db-section">
+            <div class="db-section-header">
+              <div class="db-section-header-icon" style="background:#fef9ec;">
+                <span class="material-symbols-outlined" style="color:#c67c00;">description</span>
+              </div>
+              <h3 class="db-section-title">Dokumen Pendukung (Opsional)</h3>
+            </div>
+            <div class="db-section-body">
+              <!-- Sertifikat Prestasi -->
+              <div>
+                <h4 style="font-size:13px;font-weight:700;color:#121c2a;margin-bottom:8px;">
+                  Sertifikat Prestasi (Tingkat Nasional/Internasional)
+                </h4>
+                <div class="upload-card">
+                  <div class="upload-card-icon"><span class="material-symbols-outlined">cloud_upload</span></div>
+                  <div>
+                    <div class="upload-card-title">Tarik & Lepas file di sini</div>
+                    <div class="upload-card-desc">atau <span style="color:#1a6fa8;font-weight:600;">Klik untuk mencari file</span></div>
+                  </div>
+                  <div style="font-size:11px;color:#74777f;margin-top:4px;">Bisa upload maksimal 3 sertifikat terbaik. (PDF, Maks 2MB/file)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;">
+            <p style="font-size:13px;color:#74777f;"><span style="color:#ba1a1a;">*</span> Dokumen wajib diisi</p>
+            <button class="btn btn-secondary">
+              Lanjut ke Finalisasi
+              <span class="material-symbols-outlined" style="font-size:18px;margin-left:8px;">arrow_forward</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    .dash-wrapper{display:flex}
+  </style>
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
+
+

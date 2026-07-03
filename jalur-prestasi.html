@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Jalur Prestasi - IPB Cirebon</title>
+  <meta name="description" content="Informasi lengkap Jalur Prestasi IPB Cirebon, kesempatan masuk tanpa tes bagi siswa berprestasi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cta-section{background:var(--primary);padding:64px 0;text-align:center;position:relative;overflow:hidden;}
+    .cta-section .icon-bg{position:absolute;right:0;top:0;font-size:300px;opacity:.06;pointer-events:none;color:var(--on-primary);}
+    .prestasi-cat { display:flex;align-items:flex-start;gap:16px;padding:20px;background:var(--surface-container-low);border-radius:var(--radius-lg);border:1px solid var(--outline-variant); }
+    .prestasi-cat-icon { width:48px;height:48px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand" style="display:flex;align-items:center;gap:8px;"><img src="https://ipbcirebon.ac.id/assets/img/logo.png" alt="Logo" style="height:36px;width:auto;">IPB Cirebon</a>
+      <nav class="navbar-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#paths" class="active">Admission Paths</a>
+        <a href="index.html#timeline">Timeline</a>
+      </nav>
+      <a href="login.html" class="navbar-cta">Login</a>
+      <button class="navbar-mobile-btn" id="mobileMenuBtn"><span class="material-symbols-outlined filled">menu</span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a><a href="index.html#paths">Admission Paths</a><a href="index.html#timeline">Timeline</a>
+      <a href="login.html" class="mobile-cta">Login</a>
+    </div>
+  </header>
+
+  <main style="flex-grow:1;">
+
+    <!-- HERO -->
+    <div class="detail-hero">
+      <div class="detail-hero-content">
+        <div class="detail-breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          <a href="index.html#paths">Jalur Pendaftaran</a>
+          <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          <span style="color:var(--on-primary);">Jalur Prestasi</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+          <div style="width:56px;height:56px;border-radius:50%;background:var(--secondary-container);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined filled" style="color:var(--on-secondary-container);font-size:28px;">military_tech</span>
+          </div>
+          <div>
+            <p class="label-md" style="color:var(--on-primary-container);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Jalur Seleksi</p>
+            <h1 class="headline-lg" style="color:var(--on-primary);">Jalur Prestasi</h1>
+          </div>
+        </div>
+        <p class="body-lg" style="color:var(--on-primary-container);max-width:600px;">
+          Kesempatan masuk tanpa tes tulis bagi siswa yang memiliki prestasi akademik (nilai rapor) atau non-akademik (olahraga/seni) tingkat nasional maupun internasional.
+        </p>
+        <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
+          <div style="background:rgba(255,255,255,0.15);border-radius:var(--radius-lg);padding:16px 24px;text-align:center;">
+            <div class="label-md" style="color:var(--on-primary-container);margin-bottom:4px;">Kuota</div>
+            <div style="font-family:var(--font-headline);font-size:24px;font-weight:700;color:var(--on-primary);">200</div>
+            <div class="caption" style="color:var(--on-primary-container);">Mahasiswa</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:var(--radius-lg);padding:16px 24px;text-align:center;">
+            <div class="label-md" style="color:var(--on-primary-container);margin-bottom:4px;">Tes Tulis</div>
+            <div style="font-family:var(--font-headline);font-size:24px;font-weight:700;color:var(--secondary-container);">Tidak Ada</div>
+            <div class="caption" style="color:var(--on-primary-container);">Tanpa ujian tulis</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:var(--radius-lg);padding:16px 24px;text-align:center;">
+            <div class="label-md" style="color:var(--on-primary-container);margin-bottom:4px;">Deadline</div>
+            <div style="font-family:var(--font-headline);font-size:24px;font-weight:700;color:var(--secondary-container);">30 Mei</div>
+            <div class="caption" style="color:var(--on-primary-container);">2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KATEGORI PRESTASI -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;">
+          <h2 class="headline-lg" style="color:var(--primary);margin-bottom:8px;">Kategori Prestasi</h2>
+          <p class="body-md" style="color:var(--on-surface-variant);max-width:600px;margin:0 auto;">Jalur Prestasi terbuka untuk dua kategori utama: prestasi akademik dan non-akademik yang telah diakui secara resmi.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Akademik -->
+          <div class="info-card">
+            <h3 class="info-card-title"><span class="material-symbols-outlined filled" style="color:var(--secondary);font-size:24px;">school</span>Prestasi Akademik</h3>
+            <ul class="info-list">
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Nilai rapor semester 1-5 rata-rata minimal 80 untuk semua mata pelajaran.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Peringkat 10 besar di sekolah selama 3 semester terakhir.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Juara olimpiade sains/akademik tingkat kabupaten, provinsi, nasional, atau internasional.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Sertifikat/piagam penghargaan resmi dari instansi yang berwenang.</span></li>
+            </ul>
+          </div>
+          <!-- Non-Akademik -->
+          <div class="info-card">
+            <h3 class="info-card-title"><span class="material-symbols-outlined filled" style="color:var(--secondary);font-size:24px;">emoji_events</span>Prestasi Non-Akademik</h3>
+            <ul class="info-list">
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Atlet berprestasi di tingkat nasional/internasional yang diakui KONI atau instansi resmi.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Juara lomba seni dan budaya tingkat nasional/internasional.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Prestasi kepemimpinan dalam organisasi siswa (OSIS, Pramuka) di tingkat nasional.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Dokumen pendukung yang masih berlaku (tidak melebihi 3 tahun).</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOKUMEN & ALUR -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 class="section-title" style="margin-bottom:24px;">Dokumen yang Dibutuhkan</h2>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="prestasi-cat">
+                <div class="prestasi-cat-icon" style="background:var(--primary-fixed);"><span class="material-symbols-outlined" style="color:var(--primary);">description</span></div>
+                <div><div style="font-weight:600;color:var(--on-surface);margin-bottom:4px;">Ijazah / SKL</div><div class="body-md" style="color:var(--on-surface-variant);">Fotokopi ijazah atau Surat Keterangan Lulus yang dilegalisir.</div></div>
+              </div>
+              <div class="prestasi-cat">
+                <div class="prestasi-cat-icon" style="background:var(--primary-fixed);"><span class="material-symbols-outlined" style="color:var(--primary);">grade</span></div>
+                <div><div style="font-weight:600;color:var(--on-surface);margin-bottom:4px;">Transkrip Rapor</div><div class="body-md" style="color:var(--on-surface-variant);">Rapor semester 1–5 yang dilegalisir pihak sekolah.</div></div>
+              </div>
+              <div class="prestasi-cat">
+                <div class="prestasi-cat-icon" style="background:var(--secondary-fixed);"><span class="material-symbols-outlined" style="color:var(--on-secondary-container);">workspace_premium</span></div>
+                <div><div style="font-weight:600;color:var(--on-surface);margin-bottom:4px;">Sertifikat Prestasi</div><div class="body-md" style="color:var(--on-surface-variant);">Sertifikat/piagam penghargaan yang relevan (maks. 3 tahun terakhir).</div></div>
+              </div>
+              <div class="prestasi-cat">
+                <div class="prestasi-cat-icon" style="background:var(--primary-fixed);"><span class="material-symbols-outlined" style="color:var(--primary);">badge</span></div>
+                <div><div style="font-weight:600;color:var(--on-surface);margin-bottom:4px;">Pas Foto</div><div class="body-md" style="color:var(--on-surface-variant);">Foto formal terbaru ukuran 3×4 latar belakang merah, format JPG/PNG.</div></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 class="section-title" style="margin-bottom:24px;">Alur Seleksi</h2>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div class="step-item"><div class="step-number">1</div><div><div class="step-title">Pendaftaran Online</div><div class="step-desc">Buat akun di portal PMB, isi formulir, dan upload semua dokumen yang dipersyaratkan.</div></div></div>
+              <div class="step-item"><div class="step-number">2</div><div><div class="step-title">Verifikasi Dokumen</div><div class="step-desc">Tim seleksi akan memverifikasi keaslian dokumen dan prestasi yang dilaporkan (7-14 hari kerja).</div></div></div>
+              <div class="step-item"><div class="step-number">3</div><div><div class="step-title">Wawancara (Opsional)</div><div class="step-desc">Pelamar terpilih mungkin dipanggil untuk wawancara konfirmasi prestasi secara daring.</div></div></div>
+              <div class="step-item"><div class="step-number">4</div><div><div class="step-title">Pengumuman</div><div class="step-desc">Hasil seleksi diumumkan melalui portal PMB dan email terdaftar.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <span class="material-symbols-outlined icon-bg">military_tech</span>
+      <div class="container" style="position:relative;z-index:1;">
+        <h2 style="font-family:var(--font-headline);font-size:36px;font-weight:700;color:var(--on-primary);margin-bottom:16px;">Tunjukkan Prestasi Terbaikmu!</h2>
+        <p class="body-lg" style="color:var(--primary-fixed);margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto;">Daftarkan diri melalui Jalur Prestasi dan raih kesempatan menjadi mahasiswa tanpa ujian tulis.</p>
+        <a href="register.html" class="btn" style="background:var(--secondary);color:var(--primary);font-size:16px;font-weight:700;padding:16px 40px;box-shadow:0 4px 14px rgba(127,87,0,0.3);">Daftar Jalur Prestasi</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><div class="footer-brand">IPB Cirebon</div><p class="footer-desc">Membentuk masa depan melalui keunggulan akademik dan inovasi berkelanjutan.</p></div>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Campus Address</a>
+        <a href="#" class="footer-link">Contact Info</a>
+        <a href="#" class="footer-link">Academic Departments</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <div class="footer-bottom">© 2024 University Admissions Office. All rights reserved.</div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

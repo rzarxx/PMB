@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - IPB Cirebon</title>
+  <meta name="description" content="Masuk ke akun IPB Cirebon untuk melanjutkan proses pendaftaran mahasiswa baru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-page">
+
+  <!-- Background Image -->
+  <div class="auth-bg" style="position:fixed;">
+    <div class="auth-bg-img" style="background-image: url('https://ipbcirebon.ac.id/assets/img/hero.webp');"></div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="auth-main" style="position:relative;z-index:10;">
+    <div class="auth-card">
+
+      <!-- Header -->
+      <div class="auth-header">
+        <img src="https://ipbcirebon.ac.id/assets/img/logo.png" alt="Logo" style="height:48px;width:auto;margin:0 auto 12px;display:block;"><h1 class="auth-title">IPB Cirebon</h1>
+        <p class="auth-subtitle">Masuk ke akun Anda untuk melanjutkan pendaftaran</p>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form">
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="email">Email atau Username</label>
+          <div class="form-input-icon">
+            <span class="material-symbols-outlined">person</span>
+            <input class="form-input" id="email" name="email" placeholder="Masukkan email Anda" type="text" autocomplete="username">
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <div class="form-input-icon">
+            <span class="material-symbols-outlined">lock</span>
+            <input class="form-input" id="password" name="password" placeholder="Masukkan password Anda" type="password" autocomplete="current-password">
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div class="auth-options">
+          <div class="form-checkbox-group">
+            <input class="form-checkbox" id="remember-me" name="remember-me" type="checkbox">
+            <label class="body-md" for="remember-me" style="color:var(--on-surface-variant);">Ingat saya</label>
+          </div>
+          <a class="auth-link" href="#">Lupa Password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button class="btn btn-secondary btn-block" type="submit" id="loginBtn" style="padding:14px;display:flex;align-items:center;justify-content:center;gap:8px;">
+          <span class="material-symbols-outlined" style="font-size:20px;">login</span>
+          Masuk
+        </button>
+      </form>
+
+      <!-- Register Link -->
+      <p class="auth-footer-text">
+        Belum punya akun? <a href="register.html">Daftar di sini</a>
+      </p>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:var(--tertiary-container);width:100%;padding:24px;text-align:center;position:relative;z-index:10;">
+    <div style="max-width:var(--container-max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;width:100%;border-top:1px solid rgba(134,137,141,0.2);padding-top:16px;flex-wrap:wrap;gap:16px;">
+        <div class="headline-md" style="color:var(--on-tertiary-container);">IPB Cirebon</div>
+        <div class="caption" style="color:var(--on-tertiary-container);">© 2024 IPB Cirebon. All rights reserved. Accredited by the Higher Education Commission.</div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Alumni</a>
+          <a href="#" class="footer-link">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academic Data - PMB University</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#d9e3f6",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#1f2225",
+                        "on-secondary-fixed": "#281900",
+                        "surface-dim": "#d0dbed",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "surface-variant": "#d9e3f6",
+                        "on-tertiary-fixed": "#191c1f",
+                        "on-secondary-fixed-variant": "#604100",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#86898d",
+                        "surface-container-low": "#eff4ff",
+                        "outline": "#74777f",
+                        "on-primary-container": "#708ab5",
+                        "on-background": "#121c2a",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#dee9fc",
+                        "secondary-container": "#feb316",
+                        "secondary-fixed": "#ffdead",
+                        "secondary": "#7f5700",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "outline-variant": "#c4c6cf",
+                        "inverse-primary": "#aec7f6",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#465f88",
+                        "on-secondary-container": "#6a4800",
+                        "tertiary": "#080b0e",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#44474e",
+                        "on-surface": "#121c2a",
+                        "primary-container": "#002147",
+                        "primary": "#000a1e",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-fixed": "#001b3d",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed": "#e0e2e6",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-surface": "#27313f",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffba3b",
+                        "surface-container": "#e6eeff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "4px",
+                        "base": "8px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Work Sans"],
+                        "label-md": ["Work Sans"],
+                        "body-lg": ["Work Sans"],
+                        "headline-md": ["\"Source Serif 4\""],
+                        "headline-lg": ["\"Source Serif 4\""],
+                        "display-lg-mobile": ["\"Source Serif 4\""],
+                        "display-lg": ["\"Source Serif 4\""],
+                        "caption": ["Work Sans"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- Top Navigation (Mobile/Tablet Only for simplicity, Desktop relies on SideNav layout approach) -->
+<header class="md:hidden bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-mobile h-16 w-full fixed top-0 z-50">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">PMB University</div>
+<button class="text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="flex h-screen pt-16 md:pt-0">
+<!-- Sidebar Navigation -->
+<nav id="mobile-sidebar" class="hidden md:flex bg-tertiary dark:bg-tertiary-container h-screen w-64  fixed left-0  top-0 flex-col h-full py-base transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
+<div class="px-gutter py-stack-md border-b border-tertiary-container dark:border-surface-variant mb-stack-md">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden flex items-center justify-center shrink-0">
+<img alt="University Logo" class="w-full h-full object-cover" data-alt="A minimalist university crest logo, designed with deep navy and subtle gold accents, set against a pristine white background. The logo features a stylized academic shield, radiating institutional prestige and modern educational values." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqjNB5bOjgW564l78INYttljZsBypu3WmHrn7IDVkknuvbLSp4DXXw68cUQaoLyT0k2bsLrroOLMKBRloJPN6ftgjwxe1C1ePmYPvAoHhvJNIFtsrEe6fqyz4Tlq4LU5k_7ksPJ63ocgQYomSnQafspdnwyXMDncuxNF_fFZtsVioK7PGJvL3Ff5C8zmq38bdN8xnI3Di_dLwlFQaLGaV5VszTHy-yXW4NQw3bLo78Jl9DsF6XgxK4NDxMaMa0Jb-Rswc0ch7xkag"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-tertiary dark:text-on-tertiary-container text-sm leading-tight">PMB University</h1>
+<p class="font-caption text-caption text-tertiary-fixed-dim mt-1">Admissions Portal</p>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-base">
+<ul class="space-y-2"><li><a class="flex items-center gap-4 px-4 py-3 rounded-lg text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200" href="../dashboard_zero_friction_upload_dokumen/code.html"><span class="material-symbols-outlined" data-icon="dashboard">dashboard</span><span class="font-label-md text-label-md">Overview</span></a></li><li><a class="flex items-center gap-4 px-4 py-3 rounded-lg text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200" href="../dashboard_biodata_data_akademik_detail/code.html"><span class="material-symbols-outlined" data-icon="person">person</span><span class="font-label-md text-label-md">Biodata</span></a></li><li><a class="flex items-center gap-4 px-4 py-3 rounded-lg text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200" href="../dashboard_biodata_data_akademik_detail/code.html"><span class="material-symbols-outlined" data-icon="school">school</span><span class="font-label-md text-label-md">Academic</span></a></li><li><a class="flex items-center gap-4 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed font-bold border-r-4 border-secondary bg-on-tertiary-container/10 translate-x-1 transition-transform duration-150" href="../dashboard_data_orang_tua_kontak_darurat/code.html"><span class="material-symbols-outlined icon-filled" data-icon="family_restroom">family_restroom</span><span class="font-label-md text-label-md">Guardian</span></a></li><li><a class="flex items-center gap-4 px-4 py-3 rounded-lg text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200" href="../dashboard_pemilihan_program_studi_jalur/code.html"><span class="material-symbols-outlined" data-icon="account_balance">account_balance</span><span class="font-label-md text-label-md">Program</span></a></li><li><a class="flex items-center gap-4 px-4 py-3 rounded-lg text-tertiary-fixed-dim dark:text-on-tertiary-fixed-variant hover:bg-on-tertiary-container hover:text-on-tertiary transition-colors duration-200" href="../dashboard_zero_friction_upload_dokumen/code.html"><span class="material-symbols-outlined" data-icon="upload_file">upload_file</span><span class="font-label-md text-label-md">Documents</span></a></li></ul>
+</div>
+<div class="px-gutter py-stack-md border-t border-tertiary-container dark:border-surface-variant mt-auto">
+<button class="w-full bg-secondary text-primary font-label-md text-label-md py-3 rounded hover:bg-secondary-fixed transition-colors">
+                    Apply Now
+                </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+
+<div class="md:hidden flex items-center justify-between bg-surface p-4 border-b border-outline-variant sticky top-0 z-40 w-full">
+    <div class="font-headline-md text-primary font-bold text-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">school</span>
+        PMB University
+    </div>
+    <button id="open-sidebar-btn" class="p-2 text-primary focus:outline-none hover:bg-surface-variant rounded transition-colors"><span class="material-symbols-outlined">menu</span></button>
+</div>
+<div id="sidebar-overlay" class="fixed inset-0 bg-primary/20 backdrop-blur-sm z-40 hidden transition-opacity md:hidden"></div>
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop bg-surface overflow-y-auto">
+<div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mx-auto">
+<!-- Header -->
+<header class="mb-stack-lg border-b border-outline-variant pb-stack-md flex items-center gap-4"><div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined text-2xl icon-filled">family_restroom</span></div><div><h2 class="font-headline-lg text-headline-lg text-primary">Data Orang Tua &amp; Kontak Darurat</h2><p class="font-body-md text-body-md text-on-surface-variant mt-1">Lengkapi informasi wali dan kontak darurat Anda.</p></div></header>
+<div class="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Form Container (Left/Main Column) -->
+<div class="lg:col-span-2 space-y-stack-lg"><div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-gutter shadow-sm"><h3 class="font-headline-md text-headline-md text-primary mb-stack-md flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-xl">person</span>Informasi Orang Tua / Wali</h3><div class="space-y-stack-md"><div><label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="nama_wali">Nama Lengkap</label><input class="w-full border-outline-variant rounded bg-surface focus:border-primary focus:ring-1 focus:ring-primary py-3 px-4 text-on-surface font-body-md" id="nama_wali" placeholder="Nama sesuai KTP" type="text"/></div><div class="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-4"><div><label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="status_wali">Status</label><select class="w-full border-outline-variant rounded bg-surface focus:border-primary focus:ring-1 focus:ring-primary py-3 px-4 appearance-none text-on-surface font-body-md" id="status_wali"><option value="ayah">Ayah Kandung</option><option value="ibu">Ibu Kandung</option><option value="wali">Wali</option></select></div><div><label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="pekerjaan">Pekerjaan</label><input class="w-full border-outline-variant rounded bg-surface focus:border-primary focus:ring-1 focus:ring-primary py-3 px-4 text-on-surface font-body-md" id="pekerjaan" placeholder="Misal: PNS, Karyawan Swasta" type="text"/></div></div><div><label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="penghasilan">Rentang Penghasilan Bulanan</label><select class="w-full border-outline-variant rounded bg-surface focus:border-primary focus:ring-1 focus:ring-primary py-3 px-4 appearance-none text-on-surface font-body-md" id="penghasilan"><option value="&lt;2jt">&lt; Rp 2.000.000</option><option value="2-5jt">Rp 2.000.000 - Rp 5.000.000</option><option value="5-10jt">Rp 5.000.000 - Rp 10.000.000</option><option value="&gt;10jt">&gt; Rp 10.000.000</option></select></div></div></div><div class="bg-surface-container-low border-2 border-dashed border-outline-variant rounded-xl p-gutter"><h3 class="font-headline-md text-headline-md text-primary mb-stack-md flex items-center gap-2"><span class="material-symbols-outlined text-error text-xl">emergency</span>Kontak Darurat</h3><p class="font-caption text-caption text-on-surface-variant mb-stack-md">Diisi jika Orang Tua/Wali tidak dapat dihubungi</p><div class="space-y-stack-md"><div><label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="nama_darurat">Nama Kontak</label><input class="w-full border-outline-variant rounded bg-surface focus:border-primary focus:ring-1 focus:ring-primary py-3 px-4 text-on-surface font-body-md" id="nama_darurat" type="text"/></div><div class="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-4"><div><label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="hubungan">Hubungan</label><input class="w-full border-outline-variant rounded bg-surface focus:border-primary focus:ring-1 focus:ring-primary py-3 px-4 text-on-surface font-body-md" id="hubungan" placeholder="Misal: Kakak, Paman" type="text"/></div><div><label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="wa_darurat">Nomor WhatsApp</label><input class="w-full border-outline-variant rounded bg-surface focus:border-primary focus:ring-1 focus:ring-primary py-3 px-4 text-on-surface font-body-md" id="wa_darurat" placeholder="08..." type="tel"/></div></div></div></div></div>
+<!-- Sidebar Container (Right Column) -->
+<div class="space-y-stack-md">
+<!-- Checklist Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-gutter"><h4 class="font-headline-md text-headline-md text-primary mb-stack-md text-lg">Requirements</h4><ul class="space-y-3"><li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary icon-filled mt-0.5">check_circle</span><span class="font-body-md text-body-md text-on-surface-variant">Data Akademik Selesai</span></li><li class="flex items-start gap-3"><span class="material-symbols-outlined text-outline mt-0.5">radio_button_unchecked</span><span class="font-body-md text-body-md text-on-surface">Data Wali Lengkap</span></li><li class="flex items-start gap-3"><span class="material-symbols-outlined text-outline mt-0.5">radio_button_unchecked</span><span class="font-body-md text-body-md text-on-surface">Kontak Darurat Valid</span></li></ul></div>
+<!-- Info Card -->
+<div class="bg-surface-container-high rounded-xl p-gutter border border-outline-variant/50">
+<div class="flex items-center gap-2 mb-2 text-primary-container">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-md text-label-md">Penting</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Pastikan data yang dimasukkan sesuai dengan dokumen asli. Kesalahan input dapat mempengaruhi proses seleksi.</p>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="mt-stack-lg pt-stack-md border-t border-outline-variant flex justify-end gap-4">
+<button class="px-6 py-3 border border-outline text-on-surface font-label-md text-label-md rounded hover:bg-surface-container-highest transition-colors">
+                        Simpan Draf
+                    </button>
+<button class="px-6 py-3 bg-primary text-on-primary font-label-md text-label-md rounded flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+                        Simpan &amp; Lanjutkan
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Landing Page Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const topNavMenu = document.getElementById('top-nav-menu');
+    const loginBtn = document.getElementById('top-login-btn');
+    
+    if (mobileMenuBtn && topNavMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            topNavMenu.classList.toggle('hidden');
+            topNavMenu.classList.toggle('flex');
+            topNavMenu.classList.toggle('flex-col');
+            topNavMenu.classList.toggle('absolute');
+            topNavMenu.classList.toggle('top-20');
+            topNavMenu.classList.toggle('left-0');
+            topNavMenu.classList.toggle('w-full');
+            topNavMenu.classList.toggle('bg-surface');
+            topNavMenu.classList.toggle('p-4');
+            topNavMenu.classList.toggle('shadow-lg');
+            topNavMenu.classList.toggle('z-40');
+            topNavMenu.classList.toggle('border-b');
+            
+            if (loginBtn) {
+                loginBtn.classList.toggle('hidden');
+                loginBtn.classList.toggle('flex');
+                loginBtn.classList.toggle('mt-4');
+                loginBtn.classList.toggle('w-full');
+            }
+        });
+    }
+
+    // 2. Dashboard Sidebar Toggle
+    const openSidebarBtn = document.getElementById('open-sidebar-btn');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
+    if (openSidebarBtn && mobileSidebar && sidebarOverlay) {
+        openSidebarBtn.addEventListener('click', () => {
+            mobileSidebar.classList.remove('-translate-x-full');
+            sidebarOverlay.classList.remove('hidden');
+        });
+        
+        sidebarOverlay.addEventListener('click', () => {
+            mobileSidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+    }
+});
+</script>
+</body></html>

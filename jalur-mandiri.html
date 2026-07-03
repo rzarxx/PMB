@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Jalur Mandiri - IPB Cirebon</title>
+  <meta name="description" content="Informasi lengkap mengenai Jalur Mandiri IPB Cirebon, persyaratan, biaya, materi ujian, dan jadwal pelaksanaan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .timeline-vertical { position: relative; max-width: 800px; margin: 0 auto; }
+    .timeline-vertical::before { content:''; position:absolute; left:16px; top:0; bottom:0; width:2px; background:var(--outline-variant); }
+    @media(min-width:768px){ .timeline-vertical::before { left:50%; transform:translateX(-50%); } }
+    .tv-item { position:relative; display:flex; flex-direction:column; margin-bottom:32px; padding-left:48px; }
+    @media(min-width:768px){ .tv-item { flex-direction:row; padding-left:0; align-items:center; } }
+    .tv-dot { position:absolute; left:0; top:8px; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:4px solid var(--surface); z-index:1; }
+    @media(min-width:768px){ .tv-dot { left:50%; transform:translateX(-50%); } }
+    .tv-dot-done { background:var(--secondary); }
+    .tv-dot-now { background:var(--primary); }
+    .tv-dot-next { background:var(--outline-variant); }
+    .tv-content { background:var(--surface-container-lowest); border:1px solid var(--outline-variant); border-radius:var(--radius-lg); padding:24px; }
+    @media(min-width:768px){ .tv-content.right { margin-left:calc(50% + 24px); width:calc(50% - 24px); } .tv-content.left { margin-right:calc(50% + 24px); width:calc(50% - 24px); text-align:right; } }
+    .tv-date { display:inline-block; padding:4px 12px; border-radius:var(--radius-default); font-size:14px; font-weight:600; letter-spacing:0.05em; margin-bottom:8px; }
+    .tv-date-done { background:var(--primary-fixed); color:var(--primary); }
+    .tv-date-now { background:var(--primary-fixed); color:var(--primary); }
+    .tv-date-next { background:var(--surface-variant); color:var(--on-surface-variant); }
+    .exam-bullet { display:flex; align-items:center; gap:8px; font-size:16px; color:var(--on-surface-variant); line-height:24px; }
+    .exam-bullet::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--secondary); flex-shrink:0; }
+    .sub-col { border-bottom:1px solid var(--outline-variant); padding-bottom:4px; margin-bottom:8px; font-family:var(--font-body); font-size:14px; font-weight:600; letter-spacing:0.05em; color:var(--primary); }
+    .sub-item { font-size:12px; line-height:20px; color:var(--on-surface-variant); }
+    .cta-section { background:var(--primary); padding:64px 0; text-align:center; position:relative; overflow:hidden; }
+    .cta-section .icon-bg { position:absolute; right:0; top:0; font-size:300px; opacity:0.06; pointer-events:none; color:var(--on-primary); }
+    .fee-box { background:var(--surface); border:1px solid var(--outline-variant); border-radius:var(--radius-lg); padding:16px; }
+    .fee-label { font-size:14px; font-weight:600; letter-spacing:0.05em; color:var(--on-surface-variant); margin-bottom:4px; }
+    .fee-value { font-family:var(--font-headline); font-size:24px; font-weight:600; color:var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand" style="display:flex;align-items:center;gap:8px;"><img src="https://ipbcirebon.ac.id/assets/img/logo.png" alt="Logo" style="height:36px;width:auto;">IPB Cirebon</a>
+      <nav class="navbar-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#paths" class="active">Admission Paths</a>
+        <a href="index.html#timeline">Timeline</a>
+      </nav>
+      <a href="login.html" class="navbar-cta">Login</a>
+      <button class="navbar-mobile-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span class="material-symbols-outlined filled">menu</span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#paths">Admission Paths</a>
+      <a href="index.html#timeline">Timeline</a>
+      <a href="login.html" class="mobile-cta">Login</a>
+    </div>
+  </header>
+
+  <main style="flex-grow:1;">
+
+    <!-- HERO -->
+    <div class="detail-hero">
+      <div class="detail-hero-content">
+        <div class="detail-breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          <a href="index.html#paths">Jalur Pendaftaran</a>
+          <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          <span style="color:var(--on-primary);">Jalur Mandiri</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+          <div style="width:56px;height:56px;border-radius:50%;background:var(--secondary-container);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined filled" style="color:var(--on-secondary-container);font-size:28px;">edit_document</span>
+          </div>
+          <div>
+            <p class="label-md" style="color:var(--on-primary-container);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Jalur Seleksi</p>
+            <h1 class="headline-lg" style="color:var(--on-primary);">Jalur Mandiri</h1>
+          </div>
+        </div>
+        <p class="body-lg" style="color:var(--on-primary-container);max-width:600px;">
+          Seleksi penerimaan berdasarkan hasil ujian tulis mandiri yang diselenggarakan oleh universitas untuk mengukur kemampuan akademik dasar calon mahasiswa baru.
+        </p>
+        <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
+          <div style="background:rgba(255,255,255,0.15);border-radius:var(--radius-lg);padding:16px 24px;text-align:center;">
+            <div class="label-md" style="color:var(--on-primary-container);margin-bottom:4px;">Kuota</div>
+            <div style="font-family:var(--font-headline);font-size:24px;font-weight:700;color:var(--on-primary);">400</div>
+            <div class="caption" style="color:var(--on-primary-container);">Mahasiswa</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:var(--radius-lg);padding:16px 24px;text-align:center;">
+            <div class="label-md" style="color:var(--on-primary-container);margin-bottom:4px;">Biaya</div>
+            <div style="font-family:var(--font-headline);font-size:24px;font-weight:700;color:var(--on-primary);">Rp 350rb</div>
+            <div class="caption" style="color:var(--on-primary-container);">Saintek/Soshum</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:var(--radius-lg);padding:16px 24px;text-align:center;">
+            <div class="label-md" style="color:var(--on-primary-container);margin-bottom:4px;">Deadline</div>
+            <div style="font-family:var(--font-headline);font-size:24px;font-weight:700;color:var(--secondary-container);">20 Juni</div>
+            <div class="caption" style="color:var(--on-primary-container);">2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERSYARATAN & BIAYA -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;">
+          <h2 class="headline-lg" style="color:var(--primary);margin-bottom:8px;">Persyaratan &amp; Biaya</h2>
+          <p class="body-md" style="color:var(--on-surface-variant);max-width:600px;margin:0 auto;">Informasi lengkap mengenai persyaratan umum pendaftaran dan rincian biaya ujian Jalur Mandiri.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Persyaratan -->
+          <div class="info-card" style="grid-column: span 2;">
+            <h3 class="info-card-title">
+              <span class="material-symbols-outlined" style="color:var(--secondary);font-size:24px;">fact_check</span>
+              Persyaratan Umum
+            </h3>
+            <ul class="info-list">
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Lulusan SMA/SMK/MA atau sederajat tahun berjalan atau maksimal 2 tahun sebelumnya.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Memiliki kesehatan yang memadai sehingga tidak mengganggu kelancaran proses pembelajaran.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Bagi lulusan luar negeri harus memiliki surat penyetaraan ijazah dari Kemdikbud.</span></li>
+              <li class="info-list-item"><span class="material-symbols-outlined">check_circle</span><span>Membayar biaya pendaftaran sesuai dengan kelompok ujian yang dipilih.</span></li>
+            </ul>
+          </div>
+          <!-- Biaya -->
+          <div class="info-card" style="position:relative;overflow:hidden;">
+            <div style="position:absolute;top:0;right:0;width:128px;height:128px;background:rgba(127,87,0,0.06);border-radius:0 0 0 100%;z-index:0;"></div>
+            <h3 class="info-card-title" style="position:relative;z-index:1;">
+              <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">payments</span>
+              Biaya Pendaftaran
+            </h3>
+            <div style="display:flex;flex-direction:column;gap:16px;position:relative;z-index:1;">
+              <div class="fee-box">
+                <div class="fee-label">Kelompok Saintek/Soshum</div>
+                <div class="fee-value">Rp 350.000</div>
+              </div>
+              <div class="fee-box">
+                <div class="fee-label">Kelompok Campuran</div>
+                <div class="fee-value">Rp 500.000</div>
+              </div>
+              <p class="caption" style="color:var(--on-surface-variant);">*Biaya pendaftaran yang telah dibayarkan tidak dapat ditarik kembali dengan alasan apapun.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERI UJIAN -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title" style="margin-bottom:8px;">Materi Ujian Tulis Berbasis Komputer</h2>
+        <p class="body-md" style="color:var(--on-surface-variant);margin-bottom:48px;">Materi ujian dirancang untuk mengukur potensi skolastik dan pemahaman akademik dasar calon mahasiswa.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TPA -->
+          <div class="card" style="border-color:var(--outline-variant);">
+            <div style="width:48px;height:48px;background:var(--primary-fixed);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+              <span class="material-symbols-outlined" style="color:var(--primary);">psychology</span>
+            </div>
+            <h3 class="card-title" style="margin-bottom:12px;">Tes Potensi Akademik (TPA)</h3>
+            <p class="body-md" style="color:var(--on-surface-variant);margin-bottom:16px;">Mengukur kemampuan kognitif yang dianggap penting untuk keberhasilan di sekolah formal, khususnya pendidikan tinggi.</p>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div class="exam-bullet">Kemampuan Penalaran Umum</div>
+              <div class="exam-bullet">Pengetahuan dan Pemahaman Umum</div>
+              <div class="exam-bullet">Kemampuan Memahami Bacaan &amp; Menulis</div>
+              <div class="exam-bullet">Pengetahuan Kuantitatif</div>
+            </div>
+          </div>
+          <!-- TKA -->
+          <div class="card" style="border-color:var(--outline-variant);">
+            <div style="width:48px;height:48px;background:var(--secondary-fixed);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+              <span class="material-symbols-outlined" style="color:var(--on-secondary-container);">menu_book</span>
+            </div>
+            <h3 class="card-title" style="margin-bottom:12px;">Tes Kemampuan Akademik (TKA)</h3>
+            <p class="body-md" style="color:var(--on-surface-variant);margin-bottom:16px;">Mengukur pengetahuan dan pemahaman keilmuan yang diajarkan di sekolah dan diperlukan di pendidikan tinggi.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;">
+              <div>
+                <div class="sub-col">Saintek</div>
+                <div class="sub-item">Matematika Sains</div>
+                <div class="sub-item">Fisika</div>
+                <div class="sub-item">Kimia</div>
+                <div class="sub-item">Biologi</div>
+              </div>
+              <div>
+                <div class="sub-col">Soshum</div>
+                <div class="sub-item">Geografi</div>
+                <div class="sub-item">Sejarah</div>
+                <div class="sub-item">Sosiologi</div>
+                <div class="sub-item">Ekonomi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JADWAL -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;">
+          <h2 class="section-title" style="margin-bottom:8px;">Jadwal Pelaksanaan</h2>
+          <p class="body-md" style="color:var(--on-surface-variant);max-width:600px;margin:0 auto;">Perhatikan dengan seksama tanggal-tanggal penting berikut agar tidak tertinggal proses seleksi.</p>
+        </div>
+        <div class="timeline-vertical">
+          <!-- Step 1 -->
+          <div class="tv-item">
+            <div class="tv-dot tv-dot-done"><span class="material-symbols-outlined filled" style="color:#fff;font-size:14px;">check</span></div>
+            <div class="tv-content right">
+              <div class="tv-date tv-date-done">1 - 20 Juni 2024</div>
+              <h4 class="headline-md" style="color:var(--primary);margin-bottom:4px;">Pendaftaran Online</h4>
+              <p class="body-md" style="color:var(--on-surface-variant);">Pembuatan akun, pengisian biodata, dan pemilihan program studi.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="tv-item">
+            <div class="tv-dot tv-dot-now"><span class="material-symbols-outlined filled" style="color:#fff;font-size:14px;">edit_square</span></div>
+            <div class="tv-content right">
+              <div class="tv-date tv-date-now">25 - 30 Juni 2024</div>
+              <h4 class="headline-md" style="color:var(--primary);margin-bottom:4px;">Pelaksanaan UTBK Mandiri</h4>
+              <p class="body-md" style="color:var(--on-surface-variant);">Ujian dilaksanakan di lokasi yang telah dipilih saat pendaftaran.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="tv-item">
+            <div class="tv-dot tv-dot-next"><span style="width:8px;height:8px;border-radius:50%;background:var(--surface);display:block;"></span></div>
+            <div class="tv-content right">
+              <div class="tv-date tv-date-next">10 Juli 2024</div>
+              <h4 class="headline-md" style="color:var(--primary);margin-bottom:4px;">Pengumuman Hasil Seleksi</h4>
+              <p class="body-md" style="color:var(--on-surface-variant);">Dapat diakses melalui portal resmi PMB menggunakan nomor peserta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <span class="material-symbols-outlined icon-bg">school</span>
+      <div class="container" style="position:relative;z-index:1;">
+        <h2 style="font-family:var(--font-headline);font-size:36px;font-weight:700;color:var(--on-primary);margin-bottom:16px;">Siap Memulai Perjalanan Akademik Anda?</h2>
+        <p class="body-lg" style="color:var(--primary-fixed);margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto;">Pendaftaran Jalur Mandiri telah dibuka. Segera daftarkan diri Anda dan jadilah bagian dari civitas akademika kami.</p>
+        <a href="register.html" class="btn" style="background:var(--secondary);color:var(--primary);font-size:16px;font-weight:700;padding:16px 40px;box-shadow:0 4px 14px rgba(127,87,0,0.3);">Daftar Jalur Mandiri</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><div class="footer-brand">IPB Cirebon</div><p class="footer-desc">© 2024 University Admissions Office. All rights reserved.</p></div>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Campus Address</a>
+        <a href="#" class="footer-link">Contact Info</a>
+        <a href="#" class="footer-link">Academic Departments</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <div class="footer-bottom">© 2024 University Admissions Office. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
