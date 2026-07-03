@@ -1,0 +1,11 @@
+*.zip
+*.txt
+DESIGN.md
+apply-responsive.js
+clone-exact.js
+fix-links.js
+fix-main-class.js
+generate-exact.js
+patch-exact.js
+standardize-sidebar.js
+stitch_portal_pendaftaran_mahasiswa_baru/
