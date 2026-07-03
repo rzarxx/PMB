@@ -364,3 +364,143 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // --- 1. Dark Mode Toggle ---
+  const themeToggleBtns = document.querySelectorAll('.theme-toggle');
+  
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeToggleBtns.forEach(btn => {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+      }
+    });
+  }
+  
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  setTheme(savedTheme);
+  
+  themeToggleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+  });
+
+  // --- 2. Form Validation Real-Time ---
+  const inputs = document.querySelectorAll('.form-input, .form-select');
+  inputs.forEach(input => {
+    input.addEventListener('input', function() {
+      if (this.value.trim() === '') {
+        this.classList.remove('is-valid', 'is-invalid');
+        return;
+      }
+      if (this.type === 'email') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailRegex.test(this.value)) {
+          this.classList.add('is-valid');
+          this.classList.remove('is-invalid');
+        } else {
+          this.classList.add('is-invalid');
+          this.classList.remove('is-valid');
+        }
+      } else if (this.id === 'nik') {
+        if (this.value.length === 16 && /^\d+$/.test(this.value)) {
+          this.classList.add('is-valid');
+          this.classList.remove('is-invalid');
+        } else {
+          this.classList.add('is-invalid');
+          this.classList.remove('is-valid');
+        }
+      } else {
+        if (this.value.trim().length > 2) {
+          this.classList.add('is-valid');
+          this.classList.remove('is-invalid');
+        }
+      }
+    });
+  });
+
+  // --- 3. Toast Notifications ---
+  let toastContainer = document.getElementById('toast-container');
+  if (!toastContainer) {
+    toastContainer = document.createElement('div');
+    toastContainer.id = 'toast-container';
+    document.body.appendChild(toastContainer);
+  }
+
+  window.showToast = function(type, title, message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast ' + type;
+    const iconName = type === 'success' ? 'check_circle' : 'error';
+    
+    toast.innerHTML = '<div class="toast-icon"><span class="material-symbols-outlined">' + iconName + '</span></div>' +
+                      '<div class="toast-content">' +
+                      '<div style="font-weight:700;color:inherit;margin-bottom:2px;">' + title + '</div>' +
+                      '<div style="font-size:12px;opacity:0.8;font-weight:400;">' + message + '</div>' +
+                      '</div>';
+    toastContainer.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  };
+
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn ? btn.innerHTML : '';
+      if(btn) btn.innerHTML = '<span class="material-symbols-outlined" style="animation: spin 1s linear infinite;">autorenew</span> Menyimpan...';
+      
+      setTimeout(() => {
+        if(btn) btn.innerHTML = originalText;
+        showToast('success', 'Berhasil', 'Data Anda telah berhasil disimpan ke dalam sistem.');
+      }, 800);
+    });
+  });
+
+  // --- 4. Show/Hide Password ---
+  const togglePasswordBtns = document.querySelectorAll('.password-toggle-btn');
+  togglePasswordBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const input = this.previousElementSibling;
+      const icon = this.querySelector('.material-symbols-outlined');
+      if (input && input.type === 'password') {
+        input.type = 'text';
+        if(icon) icon.textContent = 'visibility_off';
+      } else if (input) {
+        input.type = 'password';
+        if(icon) icon.textContent = 'visibility';
+      }
+    });
+  });
+
+  // --- 5. Back to Top Button ---
+  const backToTopBtn = document.createElement('button');
+  backToTopBtn.className = 'back-to-top';
+  backToTopBtn.innerHTML = '<span class="material-symbols-outlined">arrow_upward</span>';
+  document.body.appendChild(backToTopBtn);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
